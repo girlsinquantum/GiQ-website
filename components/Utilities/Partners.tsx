@@ -1,0 +1,43 @@
+export default function Partners() {
+  const partners = [
+    "/partners/ibm.png",
+    "/partners/perimeter.png",
+    "/partners/qbraid.png",
+    "/partners/citibank.png",
+    "/partners/quantique.png",
+    "/partners/lewagon.png",
+    "/partners/girlup.png",
+    "/partners/infleqtion.png",
+    "/partners/quanscient.png",
+    "/partners/unitednations.png",
+    "/partners/UniOfPatras.png",
+  ];
+
+  return (
+    <section className="py-20 bg-giq-light overflow-hidden border-t border-gray-100">
+      <div className="text-center mb-10">
+        <span className="text-giq-dark font-bold tracking-[0.2em] uppercase text-base">
+          Our Supporters
+        </span>
+      </div>
+
+      <div className="relative flex overflow-hidden">
+
+        <div className="flex animate-marquee whitespace-nowrap gap-16 md:gap-32 items-center">
+          {[...partners, ...partners].map((logo, i) => (
+            <div 
+              key={i} 
+              className="w-20 md:w-100 h-50 flex flex-shrink-0 items-center justify-center"
+            >
+              <img
+                src={logo}
+                alt={`Partner logo ${i + 1}`}
+                className="max-h-full max-w-full object-contain"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

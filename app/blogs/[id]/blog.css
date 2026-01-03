@@ -1,0 +1,202 @@
+/* GLOBAL SETTINGS FOR BLOG */
+::selection {
+  background-color: rgba(72, 192, 178, 0.3); /* GiQ Teal Highlight */
+  color: #1a202c;
+}
+
+/* --- TYPOGRAPHY & LAYOUT --- */
+.blog-content {
+  font-family:
+    "Merriweather", "Georgia", serif; /* Medium-style serif for body */
+  color: #374151; /* Slate-700 for softer contrast */
+  line-height: 2; /* Generous leading for readability */
+  font-size: 1.25rem;
+}
+
+/* Headers */
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4 {
+  font-family:
+    "Inter",
+    -apple-system,
+    sans-serif; /* Clean sans for headers */
+  color: #111827;
+  font-weight: 800;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.blog-content h2 {
+  font-size: 2rem;
+}
+.blog-content h3 {
+  font-size: 1.5rem;
+  color: #2a8f85; /* GiQ Dark Teal */
+}
+
+/* Links */
+.blog-content a {
+  color: #111827;
+  text-decoration: none;
+  background-image: linear-gradient(to right, #48c0b2, #48c0b2);
+  background-size: 100% 2px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition:
+    background-size 0.3s,
+    color 0.3s;
+}
+
+.blog-content a:hover {
+  background-size: 100% 100%; /* Fills up like a highlighter */
+  color: white;
+}
+
+/* --- THE "GIQ" BLOCKQUOTE --- */
+/* 
+   Medium uses a simple black line. 
+   We will use a Gradient Border + Subtle Background.
+*/
+.blog-content blockquote {
+  position: relative;
+  margin: 2.5rem 0;
+  padding: 1.5rem 2rem;
+  font-style: italic;
+  font-size: 1.25rem;
+  color: #4b5563;
+  background: linear-gradient(
+    to right,
+    rgba(240, 253, 250, 1),
+    transparent
+  ); /* Fade out background */
+  border-left: 4px solid transparent;
+  border-image: linear-gradient(to bottom, #48c0b2, #f7a6dc) 1; /* Teal to Purple Gradient Border */
+}
+
+/* Add a giant decorative quote mark */
+.blog-content blockquote::before {
+  content: "“";
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  font-size: 4rem;
+  line-height: 1;
+  color: rgba(72, 192, 178, 0.2);
+  font-family: serif;
+}
+
+/* --- "QUANTUM TERMINAL" CODE BLOCKS --- */
+/* 
+   Transforms standard <pre> tags into a MacOS-like terminal window 
+*/
+.blog-content pre {
+  background: #0f172a; /* Slate-900 */
+  color: #e2e8f0;
+  padding: 1.5rem;
+  padding-top: 2.5rem; /* Space for the "window" header */
+  border-radius: 0.75rem;
+  overflow-x: auto;
+  position: relative;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  box-shadow: 0 10px 25px -10px rgba(72, 192, 178, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.blog-content pre::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ff5f56; /* Red */
+  box-shadow:
+    15px 0 0 #ffbd2e,
+    30px 0 0 #27c93f;
+}
+
+.blog-content code:not(pre code) {
+  background: rgba(247, 166, 220, 0.15);
+  color: #be185d;
+  padding: 0.2em 0.4em;
+  border-radius: 0.25em;
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+/* IMAGES & MEDIA */
+.blog-content img {
+  border-radius: 1rem;
+  margin: 2.5rem auto;
+  display: block;
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.blog-content figure {
+  margin: 2.5rem 0;
+}
+
+.blog-content figcaption {
+  text-align: center;
+  color: #9ca3af;
+  font-size: 0.875rem;
+  margin-top: 0.75rem;
+  font-style: italic;
+}
+
+/* List bullets (custom GiQ dots) */
+.blog-content ul {
+  list-style: none;
+  padding-left: 1.5rem;
+}
+
+.blog-content ul li {
+  position: relative;
+  margin-bottom: 0.75rem;
+}
+
+.blog-content ul li::before {
+  content: "•";
+  color: #48c0b2;
+  font-weight: bold;
+  font-size: 1.2em;
+  position: absolute;
+  left: -1.2em;
+  top: -1px;
+}
+/* Videos */
+.blog-content iframe,
+.blog-content video,
+.blog-content embed,
+.blog-content object {
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
+  /* Override any inline height attributes from the RSS feed */
+  height: auto !important;
+
+  border-radius: 1rem;
+  border: none;
+  background-color: #f3f4f6;
+  margin: 2rem 0;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* 
+   Handle Medium specific wrappers.
+   Medium sometimes wraps embeds in a <figure> or <div> with specific classes.
+   We ensure the wrapper doesn't restrict the iframe.
+*/
+.blog-content figure.iframe-container {
+  width: 100%;
+  margin: 2rem 0;
+}

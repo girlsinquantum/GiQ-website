@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+/reset-board.mjs
+/app/api/diagnose/route.ts

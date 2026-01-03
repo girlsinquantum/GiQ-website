@@ -1,0 +1,103 @@
+{
+  "introducing-myself": {
+    "likes": 12,
+    "hearts": 5,
+    "quantum": 8,
+    "comments": [
+      {
+        "id": "c1",
+        "platform": "website",
+        "author": { 
+          "name": "Luz María Quezada", 
+          "role": "Educator",
+          "avatar": "https://ui-avatars.com/api/?name=Luz+Mar%C3%ADa+Quezada&background=48c0b2&color=fff&bold=true"
+        },
+        "content": "Hola Elisa, soy una mujer graaande, que vibra con las niñas y jóvenes que desean aprender, conocer, explorar las herramientas de la ciencia y tecnología. Quiero aportar con mis redes y contactos en Colegios de Chile para que se abran posibilidades a todas ellas, muchas no cuentan con contactos, recursos y redes para hacerlo. Dime cómo ayudar a que esto se haga posible . Cariños¡¡¡",
+        "date": "28th July, 2022"
+      },
+      {
+        "id": "c2",
+        "platform": "website",
+        "author": { 
+          "name": "Wilhelm", 
+          "role": "",
+          "avatar": "https://ui-avatars.com/api/?name=Wilhelm&background=48c0b2&color=fff&bold=true"
+        },
+        "content":"Dear Elisa, your story is most remarkable. I am impressed by your personal story and happy to share it with whomever I can. If you do not mind I would like to advise you to contact tatjana wilk in Munich for more support and solidarity for your fields of interest. I am certain that she would like to contact and be in your group, in addition she is organizing an interesting quantum activity in my home town. Check out their website: https://www.mcqst.de/about/members/tatjana-wilk.html> all the best for your future.By the way, TOPTICA is the company that has not only plays a major role in building atom or ion-based quantum computers today, but has also built an installed the 4 laser guide star facility at the ESO astronomy facility on cerro paranal in the atacama desert in your home country. And we are playing, using the learned lessons of atom physics, in the upper atmosphere, using chirp cooling and repumping for better fluorescence yield for detwinkling stars.",
+        "date": "25th May, 2023"
+      }
+    ]
+  },
+  "leading-the-quantum-generation": {
+    "likes": 0,
+    "hearts": 0,
+    "quantum": 0,
+    "comments": [
+      {
+        "id": "c1",
+        "platform": "website",
+        "author": { 
+          "name": "Anonymous", 
+          "role": "Anonymous",
+          "avatar": "https://ui-avatars.com/api/?name=Anonymous&background=48c0b2&color=fff&bold=true"
+        },
+        "content": "I just wanted to drop by and say how much I appreciate your blog. Your writing style is both engaging and informative, making it a pleasure to read. Looking forward to your future posts!",
+        "date": "16th April. 2024"
+      }
+    ]
+  },
+  "quantum-finance-theory": {
+    "likes": 0,
+    "hearts": 0,
+    "quantum": 0,
+    "comments": [
+      {
+        "id": "c1",
+        "platform": "website",
+        "author": { 
+          "name": "Anonymous", 
+          "role": "Anonymous",
+          "avatar": "https://ui-avatars.com/api/?name=Anonymous&background=48c0b2&color=fff&bold=true"
+        },
+        "content": "I just wanted to drop by and say how much I appreciate your blog. Your writing style is both engaging and informative, making it a pleasure to read. Looking forward to your future posts!",
+        "date": "16th April, 2024"
+      }
+    ]
+  },
+  "classical-vs-quantum-cryptography": {
+    "likes": 0,
+    "hearts": 0,
+    "quantum": 0,
+    "comments": [
+      {
+        "id": "c1",
+        "platform": "website",
+        "author": { 
+          "name": "Olivia Escobar", 
+          "role": "Community Member",
+          "avatar": "https://ui-avatars.com/api/?name=Olivia+Escobar&background=48c0b2&color=fff&bold=true"
+        },
+        "content": "Hi there! Just wanted to let you know how much I enjoyed reading this post. Your approach to the subject was unique and informative. It’s clear that you put a lot of effort into your writing. Keep up the great work, and I can’t wait to see what else you have in store.",
+        "date": "22nd September, 2024"
+      }
+    ]
+  },
+  "wave-particle-duality": {
+    "likes": 0,
+    "hearts": 0,
+    "quantum": 0,
+    "comments": [
+      {
+        "id": "c1",
+        "platform": "website",
+        "author": { 
+          "name": "먹튀 없는 토토", 
+          "role": "Community Member",
+          "avatar": "https://ui-avatars.com/api/?name=%EB%A먹%ED%8A%80+%EC%97%86%EB%8A%94+%ED%86%A0%ED%86%A0&background=48c0b2&color=fff&bold=true"
+        },
+        "content": "Simply desire to say your article is as surprising The clearness in your post is simply excellent and i could assume you are an expert on this subject Fine with your permission let me to grab your feed to keep up to date with forthcoming post Thanks a million and please carry on the gratifying work.",
+        "date": "4th September, 2024"
+      }
+    ]
+  }
+}
