@@ -57,7 +57,7 @@ async function fetchPageContent(url: string): Promise<{ html: string; status: nu
       html: res.ok ? await res.text() : "", 
       status: res.status 
     };
-  } catch (e) { 
+  } catch{ 
     return { html: "", status: 500 }; 
   }
 }
@@ -101,7 +101,7 @@ function findBestDate($: cheerio.CheerioAPI, pageTitle: string): Date | null {
           jsonDate = item.validThrough;
         }
       }
-    } catch (e) {}
+    } catch {}
   });
   if (jsonDate) return new Date(jsonDate);
 

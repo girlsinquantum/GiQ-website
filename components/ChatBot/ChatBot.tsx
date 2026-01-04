@@ -57,7 +57,7 @@ export default function ChatBot() {
 
       const data = await res.json();
       setMessages((prev) => [...prev, { role: "model", text: data.reply }]);
-    } catch (error) {
+    } catch {
       setMessages((prev) => [...prev, { role: "model", text: "Connection interference detected. Please check your internet connection." }]);
     } finally {
       setIsLoading(false);
@@ -109,7 +109,7 @@ export default function ChatBot() {
               </div>
 
               <div className="text-white">
-                <h3 className="font-bold text-base tracking-wide drop-shadow-sm">Schrödinger's Assistant</h3>
+                <h3 className="font-bold text-base tracking-wide drop-shadow-sm">Schrödinger&apos;s Assistant</h3>                
                 <p className="text-[11px] text-[#e0f7fa] font-medium flex items-center gap-1.5 opacity-95">
                   <span className="relative flex h-2 w-2">
                   </span>

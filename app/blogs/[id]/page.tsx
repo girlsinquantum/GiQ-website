@@ -5,7 +5,8 @@ import BlogComments from "@/components/Blog/BlogComments";
 import BlogShareButtons from "@/components/Blog/BlogShareButtons";
 import BlogTagCycler from "@/components/Blog/BlogTagCycler"; 
 import BlogNavigation from "@/components/Blog/BlogNavigation";
-
+import ProgressBar from "@/components/Blog/ProgressBar"; 
+import Image from "next/image";
 import "./blog.css";
 
 type Props = {
@@ -57,15 +58,8 @@ export default async function BlogPostPage({ params }: Props) {
   return (
     <article className="min-h-screen bg-white text-gray-900 relative">
       
-      <div className="fixed top-0 left-0 w-full h-1.5 z-50 bg-gray-100">
-         <div 
-           className="h-full bg-gradient-to-r from-giq-main to-giq-purple origin-left w-full scale-x-0 animate-scroll-progress"
-           style={{
-             animationTimeline: 'scroll()',
-             animationName: 'scroll-progress',
-           }}
-         />
-      </div>
+      <ProgressBar />
+
 
       <div className="pt-32 pb-24">
         <header className="container mx-auto px-4 max-w-5xl mb-12 text-left">
@@ -76,7 +70,8 @@ export default async function BlogPostPage({ params }: Props) {
         </div>              
 
 
-          <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 mb-8 leading-tight tracking-tight font-sans animate-in fade-in slide-in-from-bottom-5 duration-1000 delay-100">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold text-gray-900 mb-8 leading-none tracking-tight font-sans animate-in fade-in slide-in-from-bottom-5 duration-500 delay-100">
+
             {blog.title}
             
           </h1>
@@ -85,14 +80,16 @@ export default async function BlogPostPage({ params }: Props) {
             {formatDate(blog.date)} • {readTime}
           </span>
 
-          <div className="flex flex-col md:flex-row items-center justify-between border-t border-b border-gray-100 py-6 gap-6">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between border-t border-b border-gray-100 py-6 gap-6">
             <div className="flex items-center gap-4">
               <div className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-tr from-giq-main to-giq-purple rounded-full blur opacity-25 group-hover:opacity-50 transition"></div>
-                <img 
+                <Image 
                   src={blog.author.avatar || "/logo.svg"} 
                   alt={blog.author.name}
-                  className="relative w-14 h-14 rounded-full object-cover border-2 border-white shadow-md" 
+                  width={56}
+                  height={56}
+                  className="relative w-14 h-14 rounded-full object-cover border-2 border-white shadow-md flex-shrink-0 aspect-square" 
                 />
               </div>
               <div className="text-left">
@@ -114,10 +111,13 @@ export default async function BlogPostPage({ params }: Props) {
           <div className="container mx-auto px-4 max-w-5xl mb-16 animate-in fade-in duration-1000 delay-200">
             <div className="relative aspect-[21/9] rounded-2xl overflow-hidden shadow-2xl shadow-giq-main/10 group">
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500 z-10"></div>
-              <img 
-                src={blog.coverImage || undefined} 
+              <Image 
+                src={blog.coverImage || ""} 
                 alt={blog.title}
-                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-out"
+                fill
+                priority={true} 
+                sizes="(max-width: 768px) 100vw, 1200px"
+                className="object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-out"
               />
             </div>
             <figcaption className="text-center text-xs text-gray-400 mt-3 font-mono uppercase tracking-wide">

@@ -49,7 +49,13 @@ const getCategoryStyle = (cat: string) => {
   }
 };
 
-export default function ResourceCard({ resource }: { resource: any }) {
+interface Resource {
+  title: string;
+  link: string;
+  category: string;
+}
+
+export default function ResourceCard({ resource }: { resource: Resource }) {
   const style = getCategoryStyle(resource.category);
 
   return (

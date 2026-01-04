@@ -19,6 +19,9 @@
 
   --animate-spin-slow: spin-slow 8s linear infinite;
 
+  --animate-spin-slow: spin-slow 3s linear infinite;
+  --animate-spin-reverse: spin-reverse 3s linear infinite;
+
   @keyframes marquee {
     from {
       transform: translateX(0);
@@ -46,6 +49,14 @@
     }
     to {
       transform: rotate(360deg);
+    }
+  }
+  @keyframes spin-reverse {
+    from {
+      transform: rotate(360deg);
+    }
+    to {
+      transform: rotate(0deg);
     }
   }
 }

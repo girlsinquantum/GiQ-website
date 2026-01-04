@@ -12,7 +12,7 @@ export const teamMembers = [
     name: "Sophia Guertler",
     role: "Head of Operations",
     country: "Germany",
-    image: "/team/sophia.jpg",
+    image: "/team/Sophia.jpg",
     linkedin: "https://www.linkedin.com/in/sophia-guertler-120b94232/",
     bio: "Works at the intersection of integrated photonics and quantum technologies, supporting research and operations within neuromorphic quantum photonics."
   },

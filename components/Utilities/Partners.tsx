@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Partners() {
   const partners = [
     "/partners/ibm.png",
@@ -27,12 +29,13 @@ export default function Partners() {
           {[...partners, ...partners].map((logo, i) => (
             <div 
               key={i} 
-              className="w-20 md:w-100 h-50 flex flex-shrink-0 items-center justify-center"
+              className="relative w-32 md:w-60 h-16 md:h-24 flex-shrink-0"
             >
-              <img
+              <Image
                 src={logo}
                 alt={`Partner logo ${i + 1}`}
-                className="max-h-full max-w-full object-contain"
+                fill
+                className="object-contain"
               />
             </div>
           ))}

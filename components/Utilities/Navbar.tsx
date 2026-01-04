@@ -4,9 +4,14 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
+import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+
+  const pathname = usePathname();
+
+  if (pathname && pathname.startsWith("/studio")) return null;
 
   return (
     <nav className="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">

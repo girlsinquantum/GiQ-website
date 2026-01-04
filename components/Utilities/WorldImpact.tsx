@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { mapPins } from "@/data/content";
+import Image from "next/image";
 
 export default function WorldImpact() {
   return (
@@ -35,11 +36,13 @@ export default function WorldImpact() {
 
         <div className="relative w-full max-w-6xl aspect-[1.8/1] md:aspect-[2/1] bg-[#48C0B2] rounded-xl">
           
-          <img
+          <Image
             src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg"
             alt="World Map"
-            className="absolute inset-0 w-full h-full object-cover opacity-30 brightness-0 invert"
+            fill
+            className="object-cover opacity-30 brightness-0 invert"
             draggable={false}
+            unoptimized
           />
           <div className="absolute top-0 left-0 w-full h-5 md:h-28 bg-gradient-to-b from-[#48C0B2] to-transparent z-10 pointer-events-none" />
 
@@ -61,11 +64,12 @@ export default function WorldImpact() {
               <div className="absolute inset-0 rounded-full bg-white/40 blur-sm md:blur-md animate-pulse group-hover:bg-yellow-300/60" />
 
               <div className="relative w-4 h-4 sm:w-6 sm:h-6 md:w-7 md:h-7 rounded-full overflow-hidden border-[1px] md:border-2 border-giq-lavender shadow-lg transform group-hover:scale-150 group-hover:-translate-y-2 transition-all duration-300 bg-black">
-                <img
+                <Image
                   src={`https://flagcdn.com/w80/${pin.code}.png`}
                   alt={pin.label}
-                  className="w-full h-full object-cover"
-                  loading="lazy"
+                  fill
+                  className="object-cover"
+                  unoptimized // External flagcdn URL
                 />
               </div>
 

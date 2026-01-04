@@ -2,18 +2,48 @@ import { teamMembers, ambassadors, advisoryBoard } from "@/data/content";
 import { resources } from "@/data/resources";
 import { client } from "@/sanity/lib/client";
 
+// Type Definitions
+
+interface Person {
+  name: string;
+  role?: string;
+  country?: string;
+  bio?: string;
+  desc?: string;
+}
+
+interface SanityOpportunity {
+  title: string;
+  organization: string;
+  deadline: string;
+}
+
+interface SanityEvent {
+  title: string;
+  date: string;
+  eventType: string;
+}
+
+interface SanityBlog {
+  title: string;
+  authorName: string | null;
+  publishedAt: string;
+}
+
+
 const clean = (str: string) => str.toLowerCase().replace(/[^\w\s]/g, "");
 
 export async function buildChatContext(userMessage: string): Promise<string> {
   const lowerMsg = clean(userMessage);
-  let contextParts: string[] = [];
+  
+  const contextParts: string[] = [];
 
   contextParts.push(
     `IDENTITY: You are CatBot (Schrödinger's Assistant) for Girls in Quantum (GIQ). Status: Online.`,
     `CONTACT: girlsinquantum@gmail.com.`
   );
 
-  const allPeople = [...teamMembers, ...ambassadors, ...advisoryBoard];
+  const allPeople: Person[] = [...teamMembers, ...ambassadors, ...advisoryBoard];
 
   const mentionedPerson = allPeople.find(p => 
     lowerMsg.includes(p.name.toLowerCase().split(" ")[0]) || 
@@ -21,20 +51,20 @@ export async function buildChatContext(userMessage: string): Promise<string> {
   );
 
   if (mentionedPerson) {
-    const p = mentionedPerson as any;
+    const p = mentionedPerson;
     contextParts.push(
-      `FOCUS PROFILE: ${p.name} (${p.role}). Country: ${p.country || "Global"}. Bio: "${p.bio || p.desc || "Team member"}".`
+      `FOCUS PROFILE: ${p.name} (${p.role || "Member"}). Country: ${p.country || "Global"}. Bio: "${p.bio || p.desc || "Team member"}".`
     );
   }
 
   if (!mentionedPerson) {
-    const countries = [...new Set(allPeople.map(p => (p as any).country).filter(Boolean))];
-    const foundCountry = countries.find(c => lowerMsg.includes((c as string).toLowerCase()));
+    const countries = [...new Set(allPeople.map(p => p.country).filter((c): c is string => !!c))];
+    const foundCountry = countries.find(c => lowerMsg.includes(c.toLowerCase()));
 
     if (foundCountry) {
-      const peopleFromCountry = allPeople.filter(p => (p as any).country?.toLowerCase() === (foundCountry as string).toLowerCase());
-      const names = peopleFromCountry.map(p => `${p.name} (${p.role})`).join(", ");
-      contextParts.push(`PEOPLE FROM ${String(foundCountry).toUpperCase()}:\n${names}`);
+      const peopleFromCountry = allPeople.filter(p => p.country?.toLowerCase() === foundCountry.toLowerCase());
+      const names = peopleFromCountry.map(p => `${p.name} (${p.role || "Member"})`).join(", ");
+      contextParts.push(`PEOPLE FROM ${foundCountry.toUpperCase()}:\n${names}`);
     }
   }
 
@@ -73,9 +103,11 @@ export async function buildChatContext(userMessage: string): Promise<string> {
   if (lowerMsg.match(/(job|intern|work|phd|research|apply|deadline)/)) {
     try {
       const oppsQuery = `*[_type == "opportunity" && isLive == true && deadline >= now()] | order(deadline asc) [0...3] { title, organization, deadline }`;
-      const rawOpps = await client.fetch(oppsQuery);
+      
+      const rawOpps = await client.fetch<SanityOpportunity[]>(oppsQuery);
+      
       if (rawOpps.length > 0) {
-        const oppsStr = rawOpps.map((o: any) => `- ${o.title} @ ${o.organization} (Due: ${o.deadline})`).join("\n");
+        const oppsStr = rawOpps.map(o => `- ${o.title} @ ${o.organization} (Due: ${o.deadline})`).join("\n");
         contextParts.push(`LIVE OPPORTUNITIES:\n${oppsStr}`);
       } else {
         contextParts.push(`OPPORTUNITIES: No live deadlines found currently.`);
@@ -86,9 +118,11 @@ export async function buildChatContext(userMessage: string): Promise<string> {
   if (lowerMsg.match(/(event|webinar|workshop|meet|date|when)/)) {
     try {
       const eventQuery = `*[_type == "event" && date >= now()] | order(date asc) [0...3] { title, date, eventType }`;
-      const rawEvents = await client.fetch(eventQuery);
+      
+      const rawEvents = await client.fetch<SanityEvent[]>(eventQuery);
+      
       if (rawEvents.length > 0) {
-        const eventStr = rawEvents.map((e: any) => `- ${e.title} (${new Date(e.date).toLocaleDateString()})`).join("\n");
+        const eventStr = rawEvents.map(e => `- ${e.title} (${new Date(e.date).toLocaleDateString()})`).join("\n");
         contextParts.push(`UPCOMING EVENTS:\n${eventStr}`);
       } else {
         contextParts.push(`EVENTS: No upcoming events in the calendar.`);
@@ -103,17 +137,18 @@ export async function buildChatContext(userMessage: string): Promise<string> {
         "authorName": author->name, 
         publishedAt 
       }`;
-      const rawBlogs = await client.fetch(blogQuery);
+      
+      const rawBlogs = await client.fetch<SanityBlog[]>(blogQuery);
 
       if (rawBlogs.length > 0) {
-        const blogStr = rawBlogs.map((b: any) => 
+        const blogStr = rawBlogs.map(b => 
           `- "${b.title}" by ${b.authorName || "GIQ Team"} (${new Date(b.publishedAt).toLocaleDateString()})`
         ).join("\n");
         contextParts.push(`LATEST BLOG POSTS:\n${blogStr}\n(Recommend the first one if the user is a beginner).`);
       } else {
         contextParts.push(`BLOGS: The database connection to latest posts is quiet, but tell the user to check the 'Blogs' tab for 'Quantum 101' articles.`);
       }
-    } catch (e) { 
+    } catch { 
         contextParts.push(`BLOGS: Unable to fetch latest news. Suggest reading 'Quantum Computing through Geopolitics' in the resources.`);
     }
   }

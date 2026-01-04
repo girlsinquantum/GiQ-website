@@ -3,6 +3,9 @@ import { toHTML } from '@portabletext/to-html'; // Converts CMS blocks to HTML
 import { BlogPost} from "@/lib/types";
 import { getInteractions } from "@/lib/storage";
 import { client, urlFor } from "@/sanity/lib/client";
+import type { PortableTextBlock } from "sanity";
+
+//Type Definitions
 
 interface MediumItem extends Parser.Item {
   'content:encoded'?: string;
@@ -11,7 +14,33 @@ interface MediumItem extends Parser.Item {
   id?: string;
 }
 
-const parser = new Parser<{}, MediumItem>({
+// Interface for the raw image data coming from Sanity Portable Text
+interface SanityImageSource {
+  asset?: {
+    _ref: string;
+  };
+  alt?: string;
+  caption?: string;
+}
+
+// Interface matching the specific GROQ query projection
+interface SanityPostRaw {
+  _id: string;
+  title: string;
+  slug: string; // Query transforms slug.current to slug
+  publishedAt: string;
+  mainImage: SanityImageSource;
+  body: PortableTextBlock[]; 
+  categories: string[];
+  author?: {
+    name: string;
+    role: string;
+    image: SanityImageSource;
+  };
+}
+
+
+const parser = new Parser<Record<string, unknown>, MediumItem>({
   customFields: {
     item: ['content:encoded', 'creator', 'categories'],
   }
@@ -41,19 +70,26 @@ function cleanExcerpt(html: string): string {
 
 const components = {
   types: {
-    image: ({ value }: any) => {
+    // Value might be undefined in edge cases, use optional chaining
+    image: ({ value }: { value?: SanityImageSource }) => {
       if (!value?.asset?._ref) return '';
 
       return `
         <figure>
-          <img src="${urlFor(value).width(800).url()}" alt="${value.alt || ''}" />
+          <img 
+            src="${urlFor(value).width(800).url()}" 
+            alt="${value.alt || ''}" 
+            loading="lazy"
+          />
           ${value.caption ? `<figcaption>${value.caption}</figcaption>` : ''}
         </figure>
       `;
     },
   },
   block: {
-    blockquote: ({ children }: any) => `<blockquote>${children}</blockquote>`,
+    blockquote: ({ children }: { children?: string }) => {
+      return `<blockquote>${children || ''}</blockquote>`;
+    },
   }
 };
 
@@ -108,9 +144,9 @@ export async function getAllBlogs(): Promise<BlogPost[]> {
 
   let sanityPosts: BlogPost[] = [];
   try {
-    const rawSanity = await client.fetch(sanityQuery);
+    const rawSanity = await client.fetch<SanityPostRaw[]>(sanityQuery);
 
-    sanityPosts = await Promise.all(rawSanity.map(async (post: any) => {
+    sanityPosts = await Promise.all(rawSanity.map(async (post) => {
       const interactions = await getInteractions(post.slug);
       
       const htmlContent = toHTML(post.body, { components });

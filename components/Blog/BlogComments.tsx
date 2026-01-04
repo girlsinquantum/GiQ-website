@@ -2,7 +2,8 @@
 
 import { useState, useEffect, FormEvent } from "react";
 import { Comment } from "@/lib/types";
-import { addCommentAction } from "@/app/actions";
+import { addCommentAction } from "@/app/actions/blog_actions";
+import Image from "next/image";
 
 export default function BlogComments({ blogId, existingComments }: { blogId: string, existingComments: Comment[] }) {
   const [comments, setComments] = useState<Comment[]>(existingComments);
@@ -12,12 +13,13 @@ export default function BlogComments({ blogId, existingComments }: { blogId: str
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
-    const saved = localStorage.getItem("giq_guest_name");
-    if (saved) {
-      setGuestName(saved);
-      setIsNameSet(true);
-    }
-  }, []);
+      const saved = localStorage.getItem("giq_guest_name");
+      if (saved) {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+        setGuestName(saved);
+        setIsNameSet(true);
+      }
+    }, []);
 
   const handleSetIdentity = (e: FormEvent) => {
     e.preventDefault();
@@ -108,10 +110,13 @@ export default function BlogComments({ blogId, existingComments }: { blogId: str
       <div className="space-y-8">
         {comments.map((comment) => (
           <div key={comment.id} className="flex gap-4 animate-in fade-in slide-in-from-bottom-2 duration-500">
-            <img 
-              src={comment.author.avatar} 
+            <Image 
+              src={comment.author.avatar || ""} 
               alt={comment.author.name} 
-              className="w-10 h-10 rounded-full shadow-sm"
+              width={40}
+              height={40}
+              className="w-10 h-10 rounded-full shadow-sm object-cover flex-shrink-0"
+              unoptimized
             />
             <div className="flex-1">
               <div className="flex items-baseline gap-2 mb-1">

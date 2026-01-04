@@ -4,6 +4,7 @@ import { WhatWeDo, StatsStrip} from '@/components/Utilities/HomeSections';
 import SocialHub from '@/components/Utilities/SocialMedia';
 import Link from 'next/link';
 import Partners from '@/components/Utilities/Partners';
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -41,7 +42,13 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
            <div className="relative">
              <div className="absolute inset-0 bg-giq-purple rounded-3xl rotate-3"></div>
-             <img src="/media/group.png" alt="GiQ Team" className="relative rounded-3xl shadow-xl rotate-[-2deg] hover:rotate-0 transition duration-500" />
+             <Image 
+               src="/media/group.png" 
+               alt="GiQ Team" 
+               width={600}
+               height={400}
+               className="relative w-full h-auto rounded-3xl shadow-xl rotate-[-2deg] hover:rotate-0 transition duration-500" 
+             />
            </div>
            <div>
              <span className="text-giq-main font-bold tracking-widest uppercase text-sm">Our Purpose</span>
@@ -50,7 +57,13 @@ export default function Home() {
                We want to bring opportunities to students around the world to collaborate and make an impact by strengthening their abilities and talents.
              </p>
              <div className="flex items-center gap-4">
-               <img src="/team/Elisa.png" className="w-12 h-12 rounded-full object-cover" alt="Elisa Torres Durney" />
+               <Image 
+                 src="/team/Elisa.png" 
+                 width={48}
+                 height={48}
+                 className="rounded-full object-cover" 
+                 alt="Elisa Torres Durney" 
+               />
                <div>
                  <p className="font-bold text-gray-900">Elisa Torres Durney</p>
                  <p className="text-xs text-gray-500">Founder & CEO</p>

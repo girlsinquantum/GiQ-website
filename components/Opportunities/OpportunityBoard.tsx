@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 export interface Opportunity {
   id: string;
@@ -115,11 +116,14 @@ function OpportunityCard({ data }: { data: Opportunity }) {
         <div className="w-12 h-12 shrink-0">
           
           {data.logo && logoState !== 2 ? (
-            <img 
-              src={logoState === 0 ? data.logo : getBackupLogo(data.logo)}
+            <Image 
+              src={(logoState === 0 ? data.logo : getBackupLogo(data.logo)) || ""}
               alt={data.organization}
-              className="w-full h-full object-contain rounded-lg bg-white p-0.5 border border-gray-100"
+              width={48}
+              height={48}
+              className="object-contain rounded-lg bg-white p-0.5 border border-gray-100"
               onError={handleImageError}
+              unoptimized
             />
           ) : (
             <div className="w-full h-full rounded-lg flex items-center justify-center text-lg font-black bg-gradient-to-br from-gray-100 to-gray-200 text-gray-400">

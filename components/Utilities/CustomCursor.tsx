@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
+import Image from "next/image";
+
 
 export default function CustomCursor() {
   const cursorX = useMotionValue(-100);
@@ -60,15 +62,14 @@ export default function CustomCursor() {
       }}
       transition={{ opacity: { duration: 0.2 } }}
     >
-      {/* 
-         using <img> instead of Next.js <Image> here because 
-         Next.js Image adds wrapper divs that can interfere with cursor centering.
-      */}
-      <img 
+      <Image 
         src="/logo.svg" 
-        alt="" 
-        className="w-10 h-10 object-contain select-none"
+        alt="Cursor"
+        width={40}
+        height={40}
+        className="object-contain select-none"
         draggable="false"
+        priority
       />
     </motion.div>
   );

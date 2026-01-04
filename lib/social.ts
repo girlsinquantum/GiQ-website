@@ -10,11 +10,12 @@ interface ExtendedItem extends Parser.Item {
   'yt:videoId'?: string;
 }
 
-const parser: Parser<any, ExtendedItem> = new Parser({
+const parser: Parser<Record<string, unknown>, ExtendedItem> = new Parser({
   customFields: {
     item: ['content:encoded', 'yt:videoId', 'id'],
   }
 });
+
 
 export interface SocialPost {
   id: string;
@@ -50,7 +51,7 @@ async function fetchLinkedInMetadata(url: string) {
     const $ = cheerio.load(html);
 
     const ogImage = $('meta[property="og:image"]').attr('content');
-    let ogTitle = $('meta[property="og:title"]').attr('content');
+    const ogTitle = $('meta[property="og:title"]').attr('content');
     const ogDesc = $('meta[property="og:description"]').attr('content');
 
     let cleanTitle = ogDesc || ogTitle || "";

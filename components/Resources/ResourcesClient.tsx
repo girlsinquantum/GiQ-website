@@ -26,8 +26,7 @@ export default function ResourcesClient({ initialResources }: ResourcesClientPro
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
           <div>
             <h1 className="text-5xl font-bold text-gray-900 mt-2 mb-4">
-                <span className="text-giq-dark">Girls in Quantum's</span><span className="text-giq-purple"> Library</span>
-            </h1>
+                <span className="text-giq-dark">Girls in Quantum&apos;s</span><span className="text-giq-purple"> Library</span>            </h1>
             <p className="text-gray-600 max-w-xl text-lg">
               Explore {initialResources.length}+ curated resources including games, textbooks, and interactive labs.
             </p>
@@ -43,7 +42,7 @@ export default function ResourcesClient({ initialResources }: ResourcesClientPro
           </a>
         </div>
 
-        <div className="sticky top-24 z-30 bg-gray-50/95 backdrop-blur-sm py-4 mb-8 -mx-4 px-4 border-b border-gray-200/50">
+        <div className="py-4 mb-8 -mx-4 px-4 border-b border-gray-200/50">
           <div className="flex overflow-x-auto pb-2 gap-2 no-scrollbar">
             {categories.map(cat => (
               <button

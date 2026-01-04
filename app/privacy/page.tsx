@@ -55,7 +55,7 @@ export default function PrivacyPage() {
             <ul className="list-disc pl-5 space-y-2 marker:text-[#2a8f85]">
               <li>Register for events.</li>
               <li>Apply for scholarships or ambassador programs.</li>
-              <li>Subscribe to our <strong>"Stay Entangled"</strong> newsletter.</li>
+              <li>Subscribe to our <strong>&quot;Stay Entangled&quot;</strong> newsletter.</li>
             </ul>
 
             <h3 className={`${spaceGrotesk.className} text-2xl mt-10 flex items-center gap-3`}>

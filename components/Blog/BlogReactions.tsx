@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { ReactionRecord } from "@/lib/types";
-import { toggleReactionAction } from "@/app/actions";
+import { toggleReactionAction } from "@/app/actions/blog_actions";
 
 interface Props {
   blogId: string;
@@ -18,12 +18,13 @@ export default function BlogReactions({ blogId, initialReactions }: Props) {
 
   useEffect(() => {
     let uid = localStorage.getItem("giq_user_id");
-    let uname = localStorage.getItem("giq_guest_name");
+    const uname = localStorage.getItem("giq_guest_name");
 
     if (!uid) {
       uid = `user_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
       localStorage.setItem("giq_user_id", uid);
     }
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setCurrentUserId(uid);
     if (uname) setCurrentUserName(uname);
   }, []);
@@ -120,7 +121,16 @@ export default function BlogReactions({ blogId, initialReactions }: Props) {
   );
 }
 
-function ReactionButton({ emoji, count, active, onClick, color }: any) {
+interface ReactionButtonProps {
+  emoji: string;
+  count: number;
+  active: boolean;
+  onClick: () => void;
+  color: string;
+}
+
+function ReactionButton({ emoji, count, active, onClick, color }: ReactionButtonProps) {
+
   return (
     <button 
       onClick={onClick}

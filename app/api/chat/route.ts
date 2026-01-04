@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from "@google/generative-ai";
+import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold, Content } from "@google/generative-ai";
 import { buildChatContext } from "@/lib/chatContext";
 
 export const runtime = "nodejs";
@@ -15,7 +15,7 @@ const API_KEYS = [
 
 async function generateWithFailover(
   systemInstruction: string, 
-  history: any[], 
+  history: Content[], 
   message: string
 ): Promise<string> {
   
@@ -51,13 +51,14 @@ async function generateWithFailover(
       const response = await result.response;
       return response.text();
 
-    } catch (error: any) {
-      if (error.message?.includes("429") || error.message?.includes("quota") || error.message?.includes("limit")) {
+    } catch (error: unknown) {
+      const err = error as Error;
+      if (err.message?.includes("429") || err.message?.includes("quota") || err.message?.includes("limit")) {
         console.warn(`⚠️ Key ending in ...${apiKey.slice(-4)} exhausted. Switching...`);
-        lastError = error;
+        lastError = err;
         continue;
       }
-      throw error;
+      throw err;
     }
   }
   throw lastError || new Error("All API keys exhausted");
@@ -110,7 +111,7 @@ export async function POST(req: Request) {
     const replyText = await generateWithFailover(systemInstruction, validHistory, message);
     return NextResponse.json({ reply: replyText });
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Fatal Chat Error:", error);
     return NextResponse.json({ 
       reply: "My waveform collapsed unexpectedly. Please try again." 

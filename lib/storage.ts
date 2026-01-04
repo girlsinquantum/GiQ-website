@@ -3,6 +3,23 @@ import { Comment, ReactionRecord } from "./types";
 import { projectId, dataset, apiVersion } from "../sanity/lib/client";
 import legacyData from "@/data/interactions.json";
 
+interface SanityCommentDoc {
+  _id: string;
+  postSlug: string;
+  content: string;
+  publishedAt: string;
+  platform?: string;
+  authorName: string;
+  avatar?: string;
+}
+
+interface SanityReactionDoc {
+  userId: string;
+  userName: string;
+  type: string;
+  timestamp: string;
+}
+
 const writeClient = createClient({
   projectId,
   dataset,
@@ -18,13 +35,13 @@ const readClient = createClient({
   useCdn: false,
 });
 
-function mapSanityComment(doc: any): Comment {
+function mapSanityComment(doc: SanityCommentDoc): Comment {
   return {
     id: doc._id,
     blogId: doc.postSlug,
     content: doc.content,
     date: new Date(doc.publishedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
-    platform: doc.platform || 'website',
+    platform: (doc.platform as Comment['platform']) || 'website',
     author: {
       name: doc.authorName,
       role: 'Community Member',
@@ -33,11 +50,11 @@ function mapSanityComment(doc: any): Comment {
   };
 }
 
-function mapSanityReaction(doc: any): ReactionRecord {
-  return {
+function mapSanityReaction(doc: SanityReactionDoc): ReactionRecord {
+return {
     userId: doc.userId,
     userName: doc.userName,
-    type: doc.type,
+    type: doc.type as ReactionRecord['type'],
     timestamp: doc.timestamp
   };
 }
@@ -51,8 +68,7 @@ export async function getInteractions(blogId: string) {
   
   const liveData = await readClient.fetch(query, { id: blogId });
 
-  // @ts-ignore
-  const legacyEntry = legacyData[blogId] || { comments: [], reactions: [] };
+  const legacyEntry = (legacyData as Record<string, { comments?: Comment[]; reactions?: ReactionRecord[] }>)[blogId] || { comments: [], reactions: [] };
 
   return {
     comments: [...liveData.comments.map(mapSanityComment), ...(legacyEntry.comments || [])],

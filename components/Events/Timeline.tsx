@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import { GiQEvent } from "@/lib/events";
 import FrequencyTuner from "./FrequencyTuner";
 import { createPortal } from "react-dom";
+import Image from "next/image";
 
 interface Props {
   events: GiQEvent[];
@@ -30,6 +31,7 @@ export default function QuantumTimeline({ events }: Props) {
     if (upcomingEvents.length > 0 && !expandedId) {
       setExpandedId(upcomingEvents[0].id);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const toggleExpand = (id: string) => {
@@ -122,8 +124,16 @@ export default function QuantumTimeline({ events }: Props) {
   );
 }
 
+interface TimelineRowProps {
+  event: GiQEvent;
+  index: number;
+  isPast: boolean;
+  expandedId: string | null;
+  toggleExpand: (id: string) => void;
+  openLightbox: (event: GiQEvent, index: number) => void;
+}
 
-function TimelineRow({ event, index, isPast, expandedId, toggleExpand, openLightbox }: any) {
+function TimelineRow({ event, index, isPast, expandedId, toggleExpand, openLightbox }: TimelineRowProps) {
   const isExpanded = expandedId === event.id;
   const isEven = index % 2 === 0;
 
@@ -134,7 +144,7 @@ function TimelineRow({ event, index, isPast, expandedId, toggleExpand, openLight
         {isEven ? (
           <TimelineCard 
             event={event} isExpanded={isExpanded} isPast={isPast} 
-            onToggle={() => toggleExpand(event.id)} align="right"
+            onToggle={() => toggleExpand(event.id)}
             onImageClick={(idx) => openLightbox(event, idx)}
           />
         ) : (
@@ -173,7 +183,7 @@ function TimelineRow({ event, index, isPast, expandedId, toggleExpand, openLight
           ) : (
           <TimelineCard 
             event={event} isExpanded={isExpanded} isPast={isPast} 
-            onToggle={() => toggleExpand(event.id)} align="left"
+            onToggle={() => toggleExpand(event.id)}
             onImageClick={(idx) => openLightbox(event, idx)}
           />
           )}
@@ -196,9 +206,9 @@ function DateMarker({ date, align, isPast }: { date: string, align: 'left' | 'ri
 }
 
 function TimelineCard({ 
-  event, isExpanded, isPast, onToggle, align, onImageClick 
+  event, isExpanded, isPast, onToggle, onImageClick 
 }: { 
-  event: GiQEvent, isExpanded: boolean, isPast: boolean, onToggle: () => void, align: 'left' | 'right', onImageClick: (i: number) => void
+  event: GiQEvent, isExpanded: boolean, isPast: boolean, onToggle: () => void, onImageClick: (i: number) => void
 }) {
   return (
     <div 
@@ -254,7 +264,12 @@ function TimelineCard({
          <div className="p-6 pt-4">
             {event.coverImage && (
               <div className="w-full h-48 rounded-xl overflow-hidden mb-5 relative group/image">
-                <img src={event.coverImage} className="w-full h-full object-cover" alt="Event Cover" />
+                <Image 
+                  src={event.coverImage} 
+                  alt="Event Cover"
+                  fill
+                  className="object-cover"
+                />
               </div>
             )}
 
@@ -274,10 +289,11 @@ function TimelineCard({
                       onClick={(e) => { e.stopPropagation(); onImageClick(i); }}
                       className="relative aspect-square rounded-lg overflow-hidden group/thumb cursor-pointer hover:ring-2 ring-giq-purple transition-all"
                     >
-                      <img 
+                      <Image 
                         src={img} 
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover/thumb:scale-110" 
                         alt={`Gallery ${i}`}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover/thumb:scale-110" 
                       />
                       <div className="absolute inset-0 bg-black/0 group-hover/thumb:bg-black/20 transition-colors flex items-center justify-center">
                         <span className="opacity-0 group-hover/thumb:opacity-100 text-white text-xs font-bold backdrop-blur-md px-2 py-1 rounded">VIEW</span>
@@ -346,13 +362,14 @@ function HolographicLightbox({ event, startIndex, onClose }: { event: GiQEvent, 
       <div className="relative w-full max-w-5xl h-[80vh] flex flex-col items-center justify-center p-4">
         
         <div className="relative w-full h-full flex items-center justify-center">
-            <img 
-              key={currentIndex}
-              src={event.gallery[currentIndex]} 
-              className="max-h-full max-w-full object-contain rounded-lg shadow-2xl animate-in zoom-in-95 duration-500"
-              alt="Memory"
-            />
-        </div>
+                <Image 
+                  key={currentIndex}
+                  src={event.gallery[currentIndex]} 
+                  alt="Memory"
+                  fill
+                  className="object-contain"
+                />
+            </div>
 
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-3 p-2 bg-black/40 backdrop-blur-xl rounded-full border border-white/10 max-w-[90vw] overflow-x-auto scrollbar-hide">
           {event.gallery.map((img, idx) => (
@@ -363,7 +380,12 @@ function HolographicLightbox({ event, startIndex, onClose }: { event: GiQEvent, 
                 idx === currentIndex ? 'border-giq-main scale-110 opacity-100' : 'border-transparent opacity-50 hover:opacity-100'
               }`}
             >
-              <img src={img} className="w-full h-full object-cover" alt="thumb" />
+            <Image 
+                 src={img} 
+                 alt="thumb" 
+                 fill
+                 className="object-cover"
+              />
             </button>
           ))}
         </div>

@@ -41,7 +41,7 @@ export default function BlogShareButtons({ title, slug }: Props) {
       } else {
         throw new Error("Clipboard API unavailable");
       }
-    } catch (err) {
+    } catch {
       try {
         const textArea = document.createElement("textarea");
         textArea.value = currentUrl;

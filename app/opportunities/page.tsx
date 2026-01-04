@@ -30,7 +30,6 @@ async function getSanityOpportunities(): Promise<Opportunity[]> {
 
 export default async function OpportunitiesPage() {
   const opportunities = await getSanityOpportunities();
-  const companies = new Set(opportunities.map((o) => o.organization)).size;
 
   return (
     <main className="min-h-screen bg-white pt-32 pb-24 relative overflow-hidden">

@@ -30,7 +30,7 @@ export default function BlogTagCycler({ tags, variant = "card" }: Props) {
   const containerStyles =
     variant === "card"
       ? "absolute top-4 right-4 bg-giq-light backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-giq-deep shadow-sm z-10 border border-white/50"
-      : "bg-giq-light text-giq-dark] px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase shadow-sm inline-block";
+      : "bg-giq-light text-giq-dark px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase shadow-sm inline-block";
 
   return (
     <div className={containerStyles}>
