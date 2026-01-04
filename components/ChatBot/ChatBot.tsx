@@ -64,6 +64,12 @@ export default function ChatBot() {
     }
   };
 
+    const safariClipFix = {
+    WebkitMaskImage: "-webkit-radial-gradient(white, black)",
+    maskImage: "radial-gradient(white, black)"
+  };
+
+
   return (
     <div className="fixed bottom-0 right-0 z-[9000] font-sans flex flex-col items-end sm:bottom-6 sm:right-6 cursor-none pointer-events-none">
       
@@ -93,7 +99,10 @@ export default function ChatBot() {
             <div className="flex items-center gap-3">
               
               <div className="relative">
-                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center border-[3px] border-[#ccfbf1]/50 shadow-sm overflow-hidden transform-gpu relative">
+                <div 
+                  className="w-12 h-12 bg-white rounded-full flex items-center justify-center border-[3px] border-[#ccfbf1]/50 shadow-sm overflow-hidden relative"
+                  style={safariClipFix}
+                >
                    <div className="w-full h-full p-1 relative"> 
                      <Image 
                        src="/media/cat.svg" 
@@ -220,7 +229,10 @@ export default function ChatBot() {
         `}
         aria-label="Open Chat"
       >
-        <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-full flex items-center justify-center overflow-hidden relative transform-gpu">
+          <div 
+          className="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-full flex items-center justify-center overflow-hidden relative"
+          style={safariClipFix}
+        >
            <div className="w-full h-full p-2 relative"> 
              <Image 
                src="/media/cat.svg" 
@@ -230,6 +242,7 @@ export default function ChatBot() {
              />
            </div>
         </div>
+
 
         <span className="absolute top-0 right-0 translate-x-[-2px] translate-y-[2px] w-4 h-4 bg-[#fde047] rounded-full animate-bounce shadow-md"></span>
       </button>
