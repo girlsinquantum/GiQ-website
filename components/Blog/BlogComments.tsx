@@ -60,11 +60,12 @@ export default function BlogComments({ blogId, existingComments }: { blogId: str
 
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-1 mb-10 overflow-hidden">
         
-        {!isNameSet ? (
-          <div className="p-8 text-center bg-gray-50/50">
+      {!isNameSet ? (
+          <div className="p-6 md:p-8 text-center bg-gray-50/50">
              <h4 className="font-bold text-gray-800 mb-2">Join the conversation</h4>
              <p className="text-sm text-gray-500 mb-6">Enter your name to start commenting.</p>
-             <form onSubmit={handleSetIdentity} className="flex gap-2 max-w-sm mx-auto">
+
+             <form onSubmit={handleSetIdentity} className="flex flex-col sm:flex-row gap-3 max-w-sm mx-auto">
                <input 
                  type="text" 
                  value={guestName}
@@ -73,7 +74,11 @@ export default function BlogComments({ blogId, existingComments }: { blogId: str
                  className="flex-1 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-giq-main focus:ring-2 focus:ring-giq-light/20 transition"
                  required
                />
-               <button type="submit" className="bg-giq-main text-white px-6 py-2 rounded-lg font-bold hover:bg-giq-dark transition">
+               
+               <button 
+                 type="submit" 
+                 className="w-full sm:w-auto bg-giq-main text-white px-6 py-2 rounded-lg font-bold hover:bg-giq-dark transition"
+               >
                  Continue
                </button>
              </form>

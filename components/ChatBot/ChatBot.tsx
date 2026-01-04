@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useEffect, useRef } from "react";
@@ -49,6 +48,7 @@ export default function ChatBot() {
         parts: [{ text: m.text }]
       }));
 
+      // Note: Assuming /api/chat exists.
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -65,7 +65,6 @@ export default function ChatBot() {
   };
 
   return (
-
     <div className="fixed bottom-0 right-0 z-[9000] font-sans flex flex-col items-end sm:bottom-6 sm:right-6 cursor-none pointer-events-none">
       
       <div 
@@ -94,7 +93,7 @@ export default function ChatBot() {
             <div className="flex items-center gap-3">
               
               <div className="relative">
-                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center border-[3px] border-[#ccfbf1]/50 shadow-sm overflow-hidden">
+                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center border-[3px] border-[#ccfbf1]/50 shadow-sm overflow-hidden transform-gpu relative">
                    <div className="w-full h-full p-1 relative"> 
                      <Image 
                        src="/media/cat.svg" 
@@ -181,7 +180,7 @@ export default function ChatBot() {
               disabled={isLoading || isCooldown}
               onChange={(e) => setInput(e.target.value)}
               placeholder={isCooldown ? "Stabilizing..." : "Ask me anything..."}
-              className="flex-1 bg-[#f8fafc] border border-gray-100 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-[#48c0b2]/20 focus:border-[#48c0b2] outline-none transition-all placeholder:text-gray-400 disabled:opacity-60 disabled:cursor-not-allowed text-[#1e293b] font-medium cursor-none"
+              className="flex-1 bg-[#f8fafc] border border-gray-100 rounded-xl px-4 py-3 text-base focus:ring-2 focus:ring-[#48c0b2]/20 focus:border-[#48c0b2] outline-none transition-all placeholder:text-gray-400 disabled:opacity-60 disabled:cursor-not-allowed text-[#1e293b] font-medium cursor-none"
             />
             <button 
               type="submit" 
@@ -221,7 +220,7 @@ export default function ChatBot() {
         `}
         aria-label="Open Chat"
       >
-        <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-full flex items-center justify-center overflow-hidden relative">
+        <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-full flex items-center justify-center overflow-hidden relative transform-gpu">
            <div className="w-full h-full p-2 relative"> 
              <Image 
                src="/media/cat.svg" 

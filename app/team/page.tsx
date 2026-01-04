@@ -33,7 +33,7 @@ export default function TeamPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-12">
             {teamMembers.map((member, i) => (
-              <TeamCard key={i} data={member} />
+              <TeamCard key={i} data={member} index={i} /> 
             ))}
           </div>
         </div>
@@ -44,7 +44,7 @@ export default function TeamPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {advisoryBoard.map((advisor, i) => (
-              <TeamCard key={i} data={advisor} isAdvisor={true} />
+              <TeamCard key={i} data={advisor} isAdvisor={true} index={i + 10} />
             ))}
           </div>
         </div>
@@ -60,7 +60,7 @@ export default function TeamPage() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                     {ambassadors.map((amb, i) => (
-                      <TeamCard key={i} data={amb} />
+                      <TeamCard key={i} data={amb} index={i + 50} />
                     ))}
                   </div>
                 </div>

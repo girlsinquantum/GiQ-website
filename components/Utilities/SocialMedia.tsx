@@ -41,6 +41,7 @@ export default function SocialHub() {
               href="https://linkedin.com/company/girls-in-quantum" 
               target="_blank" rel="noopener noreferrer"
               whileHover={{ y: -5, backgroundColor: "#0077b5" }}
+              whileTap={{ scale: 0.95, backgroundColor: "#0077b5" }}
               className="w-14 h-14 bg-giq-yellow rounded-full flex items-center justify-center text-white shadow-md transition-colors duration-300"
             >
               <SiLinkedin size={26} />
@@ -50,8 +51,10 @@ export default function SocialHub() {
               href="https://instagram.com/girlsinquantum" 
               target="_blank" rel="noopener noreferrer"
               whileHover={{ y: -5 }}
+              whileTap={{ scale: 0.95 }}
               className="w-14 h-14 bg-giq-lavender rounded-full flex items-center justify-center text-white shadow-md overflow-hidden relative group"
             >
+
               <div className="absolute inset-0 bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <SiInstagram size={26} className="relative z-10" />
             </motion.a>
@@ -60,6 +63,7 @@ export default function SocialHub() {
               href="https://www.youtube.com/@girlsinquantum" 
               target="_blank" rel="noopener noreferrer"
               whileHover={{ y: -5, backgroundColor: "#FF0000" }}
+              whileTap={{ scale: 0.95, backgroundColor: "#FF0000" }}
               className="w-14 h-14 bg-giq-blue rounded-full flex items-center justify-center text-white shadow-md transition-colors duration-300"
             >
               <SiYoutube size={26} />
@@ -69,6 +73,7 @@ export default function SocialHub() {
               href="https://discord.gg/xE9mfGSy" 
               target="_blank" rel="noopener noreferrer"
               whileHover={{ y: -5, backgroundColor: "#5865F2" }}
+              whileTap={{ scale: 0.95, backgroundColor: "#5865F2" }}
               className="w-14 h-14 bg-giq-main rounded-full flex items-center justify-center text-white shadow-md transition-colors duration-300"
             >
               <SiDiscord size={26} />
@@ -78,6 +83,7 @@ export default function SocialHub() {
               href="https://medium.com/@girlsinquantum" 
               target="_blank" rel="noopener noreferrer"
               whileHover={{ y: -5, backgroundColor: "#000000" }}
+              whileTap={{ scale: 0.95, backgroundColor: "#000000" }}
               className="w-14 h-14 bg-giq-deep rounded-full flex items-center justify-center text-white shadow-md transition-colors duration-300"
             >
               <SiMedium size={26} />
@@ -92,7 +98,8 @@ export default function SocialHub() {
           <motion.a 
             href={ig?.link} target="_blank" rel="noopener noreferrer"
             whileHover={{ scale: 0.99 }}
-            className="md:col-span-2 md:row-span-2 relative rounded-[3rem] overflow-hidden group bg-gray-200 shadow-xl"
+            whileTap={{ scale: 0.98 }}
+            className="h-96 md:h-auto md:col-span-2 md:row-span-2 relative rounded-[3rem] overflow-hidden group bg-gray-200 shadow-xl"
           >
             <AnimatePresence mode="wait">
               {loading ? <motion.div key="skel" exit={{ opacity: 0 }} className="absolute inset-0 bg-gray-300 animate-pulse" /> : (
@@ -112,7 +119,8 @@ export default function SocialHub() {
           <motion.a 
             href={yt?.link} target="_blank" rel="noopener noreferrer"
             whileHover={{ scale: 0.98 }}
-            className="md:col-span-2 bg-black rounded-[3rem] relative overflow-hidden flex items-center justify-center group shadow-lg"
+            whileTap={{ scale: 0.98 }}
+            className="h-80 md:h-auto md:col-span-2 bg-black rounded-[3rem] relative overflow-hidden flex items-center justify-center group shadow-lg"
           >
             {!loading && yt?.thumbnail && (
               <Image src={yt.thumbnail} alt="YT" fill className="object-cover opacity-70 group-hover:scale-105 transition-transform duration-700" />
