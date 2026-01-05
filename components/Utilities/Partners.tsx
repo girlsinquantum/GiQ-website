@@ -13,6 +13,17 @@ export default function Partners() {
     "/partners/quanscient.png",
     "/partners/unitednations.png",
     "/partners/UniOfPatras.png",
+    "/partners/iyq.png",
+    "/partners/gitex.png",
+    "/partners/Quantum-Tech.png",
+    "/partners/quantumbasel.png",
+    "/partners/quantuminsider.png",
+    "/partners/super.png",
+    "/partners/swisscyber.png",
+    "/partners/hop.jpg",
+    "/partners/inspiringgirls.png",
+    
+
   ];
 
   return (
