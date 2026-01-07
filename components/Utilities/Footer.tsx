@@ -57,10 +57,10 @@ export default function Footer() {
                 </div>
                 <div>
                   <Link 
-                    href="/join" 
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSeaFre-Ys_X-HrhBtjnnPemmggVYE_00RUEJ9DtGHlBSzY-2w/viewform" 
                     className="inline-flex items-center gap-2 bg-[var(--color-giq-main)] text-white px-6 py-3 rounded-full font-bold shadow-md hover:bg-[var(--color-giq-dark)] transition-colors"
                   >
-                    Team Registration
+                    Member Registration
                   </Link>
                 </div>
               </motion.div>
@@ -84,7 +84,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <Link 
-                    href="/advisors" 
+                    href="https://docs.google.com/forms/d/e/1FAIpQLScHJBB7u9LQOOKs_QQp4zibJF05kJWoAD8dfdNZ3MvROj-84Q/viewform" 
                     className="inline-flex items-center gap-2 bg-[var(--color-giq-lavender)] text-[var(--color-giq-deep)] px-6 py-3 rounded-full font-bold shadow-md hover:bg-[var(--color-giq-purple)] hover:text-white transition-colors"
                   >
                     Advisor Registration

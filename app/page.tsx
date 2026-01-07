@@ -28,7 +28,7 @@ export default function Home() {
             bridging the gap in the quantum computing field.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-             <Link href="/join" className="bg-giq-main text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-giq-dark hover:scale-105 transition transform">
+             <Link href="https://docs.google.com/forms/d/e/1FAIpQLSeaFre-Ys_X-HrhBtjnnPemmggVYE_00RUEJ9DtGHlBSzY-2w/viewform" className="bg-giq-main text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-giq-dark hover:scale-105 transition transform">
                Join Us
              </Link>
              <Link href="/resources" className="bg-white text-gray-800 border-2 border-gray-100 px-8 py-4 rounded-full font-bold text-lg hover:border-giq-main hover:text-giq-main transition transform">

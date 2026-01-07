@@ -39,8 +39,8 @@ export default function Navbar() {
              <Link href="/opportunities" className="text-gray-600 hover:text-giq-main transition font-medium">Opportunities</Link>
             <Link href="/resources" className="text-gray-600 hover:text-giq-main transition font-medium">Resources</Link>
             <Link href="/team" className="text-gray-600 hover:text-giq-main transition font-medium">Team</Link>
-            <Link href="/join" className="bg-giq-main text-white px-5 py-2.5 rounded-full hover:bg-giq-dark transition font-medium shadow-md">
-              Get In Touch!
+            <Link href="https://docs.google.com/forms/d/e/1FAIpQLSeaFre-Ys_X-HrhBtjnnPemmggVYE_00RUEJ9DtGHlBSzY-2w/viewform" className="bg-giq-main text-white px-5 py-2.5 rounded-full hover:bg-giq-dark transition font-medium shadow-md">
+              Become a Member!
             </Link>
           </div>
 
@@ -63,8 +63,8 @@ export default function Navbar() {
           <Link href="/opportunities" className="text-gray-600 hover:text-giq-main transition font-medium">Opportunities</Link>
           <Link href="/resources" onClick={() => setIsOpen(false)} className="text-gray-600 text-lg py-2">Resources</Link>
           <Link href="/team" onClick={() => setIsOpen(false)} className="text-gray-600 text-lg py-2">Team</Link>
-          <Link href="/join" onClick={() => setIsOpen(false)} className="bg-giq-main text-white text-center py-3 rounded-full font-medium">
-            Join Us
+          <Link href="https://docs.google.com/forms/d/e/1FAIpQLSeaFre-Ys_X-HrhBtjnnPemmggVYE_00RUEJ9DtGHlBSzY-2w/viewform" onClick={() => setIsOpen(false)} className="bg-giq-main text-white text-center py-3 rounded-full font-medium">
+            Become a Member!
           </Link>
         </div>
       )}
