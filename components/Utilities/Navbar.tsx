@@ -69,6 +69,7 @@ export default function Navbar() {
              <Link href="/blogs" className={`${textClasses} transition font-medium text-sm lg:text-base`}>Blogs</Link>
        { /*    <Link href="/opportunities" className={`${textClasses} transition font-medium text-sm lg:text-base`}>Opportunities</Link> */ }
              <Link href="/resources" className={`${textClasses} transition font-medium text-sm lg:text-base`}>Resources</Link>
+             <Link href="/team" className={`${textClasses} transition font-medium text-sm lg:text-base`}>Team</Link>
              
              <Link href="https://docs.google.com/forms/d/e/1FAIpQLSeaFre-Ys_X-HrhBtjnnPemmggVYE_00RUEJ9DtGHlBSzY-2w/viewform" 
                className="bg-[#48c0b2] hover:bg-[#2a8f85] text-white px-6 py-2 rounded-full transition-all transform hover:scale-105 shadow-lg font-bold text-sm">
@@ -102,6 +103,7 @@ export default function Navbar() {
           <Link href="/blogs" onClick={() => setIsOpen(false)} className={`${textClasses} text-lg py-2`}>Blogs</Link>
  { /*      <Link href="/opportunities" onClick={() => setIsOpen(false)} className={`${textClasses} text-lg py-2`}>Opportunities</Link> */ }
           <Link href="/resources" onClick={() => setIsOpen(false)} className={`${textClasses} text-lg py-2`}>Resources</Link>
+          <Link href="/team" onClick={() => setIsOpen(false)} className={`${textClasses} text-lg py-2`}>Team</Link>
           <Link href="https://docs.google.com/forms/d/e/1FAIpQLSeaFre-Ys_X-HrhBtjnnPemmggVYE_00RUEJ9DtGHlBSzY-2w/viewform" onClick={() => setIsOpen(false)} className="bg-giq-main text-white text-center py-3 rounded-full font-medium">
             Become a Member!
           </Link>
