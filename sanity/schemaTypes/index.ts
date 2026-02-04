@@ -6,9 +6,9 @@ import reaction from './reaction'
 import event from './event'
 import opportunities from './opportunities'
 import { linkedinPost } from './linkedinPost'
-
+import hackathon from './hackathon'
 
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [post, author, comment, reaction, event, opportunities, linkedinPost],
+  types: [post, author, comment, reaction, event, opportunities, linkedinPost, hackathon],
 }

@@ -48,7 +48,6 @@ export default function ChatBot() {
         parts: [{ text: m.text }]
       }));
 
-      // Note: Assuming /api/chat exists.
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },

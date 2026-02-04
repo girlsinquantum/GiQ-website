@@ -3,8 +3,11 @@ import Image from "next/image";
 export default function Partners() {
   const partners = [
     "/partners/ibm.png",
+    "/partners/rigetti.png",
     "/partners/perimeter.png",
     "/partners/qbraid.png",
+    "/partners/classiq.png",
+    "/partners/quandela.png",
     "/partners/citibank.png",
     "/partners/quantique.png",
     "/partners/lewagon.png",
@@ -22,6 +25,7 @@ export default function Partners() {
     "/partners/swisscyber.png",
     "/partners/hop.jpg",
     "/partners/inspiringgirls.png",
+
     
 
   ];
