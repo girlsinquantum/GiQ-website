@@ -46,7 +46,7 @@ export default async function HackathonPage() {
       {/* Intro Text */}
       <div className="container mx-auto px-6 py-16 text-center max-w-3xl">
         <h3 className="text-2xl md:text-3xl font-light mb-6 text-white">
-          Three Tracks. One Quantum Leap.
+          Four Tracks. One Quantum Leap.
         </h3>
         <p className="leading-loose text-lg text-gray-300">
           The <span className="text-[#f7a6dc] font-medium">Q-volution</span> is here. 
