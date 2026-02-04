@@ -12,7 +12,7 @@ const TEAM = [
   { 
     name: "Elisa", 
     role: "Communications", 
-    img: "/team/elisa.png",
+    img: "/team/Elisa.png",
     color: "border-[#48c0b2]" // Teal
   },
   { 
@@ -24,19 +24,19 @@ const TEAM = [
   { 
     name: "Arife", 
     role: "Graphics & Design", 
-    img: "/team/arife.png",
+    img: "/team/Arife.png",
     color: "border-[#60a5fa]" // Blue
   },
   { 
     name: "Maria", 
     role: "Graphics & Design", 
-    img: "/team/maria.png",
+    img: "/team/Maria.png",
     color: "border-[#60a5fa]" // Blue
   },
   { 
     name: "Dhruv", 
     role: "Registrant Relations", 
-    img: "/team/dhruv.png",
+    img: "/team/Dhruv.png",
     color: "border-[#48c0b2]" // Teal
   },
 ];
