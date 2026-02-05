@@ -37,11 +37,16 @@ export default async function HackathonPage() {
       
       {/* Announcements Bar (Only visible if active) */}
       {isLive && settings?.announcements?.length > 0 && (
-        <div className="bg-[#fde047] text-[#1e293b] font-bold text-center py-3 px-4 font-mono text-sm border-y border-[#1e293b]">
+        <div className="bg-giq-purple text-[#1e293b] font-bold text-center py-3 px-4 font-mono text-sm border-y border-[#1e293b]">
           <span className="animate-pulse mr-2">●</span> 
           BROADCAST: {settings.announcements[0]}
         </div>
       )}
+
+      <div className="bg-[#48c0b2]/10 border-y border-[#48c0b2]/20 text-[#48c0b2] text-center py-3 px-4 font-mono text-xs md:text-sm tracking-wide leading-relaxed">
+          ✨ <strong>Open to all genders!</strong> It's okay if you don't have a student status, we prioritize skills. <br className="md:hidden" />
+          Beginners are welcome in <strong>Social Impact</strong>; Technical tracks require <strong>Proof of Work</strong>.
+        </div>
 
       {/* Intro Text */}
       <div className="container mx-auto px-6 py-16 text-center max-w-3xl">
@@ -56,7 +61,7 @@ export default async function HackathonPage() {
           is your moment to prove your skills.
         </p>
         <p className="mt-4 text-sm text-gray-500 font-mono">
-          *Access to quantum hardware is competitive. Prepare your proof of work.
+          *Access to quantum hardware is competitive.
         </p>
       </div>
 

@@ -43,7 +43,7 @@ export default function Navbar() {
               />
             </div>
             <div className={`text-xl md:text-2xl font-bold tracking-tight whitespace-nowrap transition-all ${isHackathon ? "text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]" : "text-giq-main"}`}>
-              |Girls in Quantum⟩
+              Girls in Quantum
             </div>
           </Link>
 

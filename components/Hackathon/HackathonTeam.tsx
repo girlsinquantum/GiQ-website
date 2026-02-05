@@ -11,7 +11,7 @@ const TEAM = [
   },
   { 
     name: "Elisa", 
-    role: "Communications", 
+    role: "Strategic Partnerships", 
     img: "/team/Elisa.png",
     color: "border-[#48c0b2]" // Teal
   },
@@ -23,21 +23,21 @@ const TEAM = [
   },
   { 
     name: "Arife", 
-    role: "Graphics & Design", 
+    role: "Design & Program", 
     img: "/team/Arife.png",
     color: "border-[#60a5fa]" // Blue
   },
   { 
     name: "Maria", 
-    role: "Graphics & Design", 
+    role: "Marketing & Brand", 
     img: "/team/Maria.png",
-    color: "border-[#60a5fa]" // Blue
+    color: "border-[#48c0b2]" // Teal
   },
   { 
     name: "Dhruv", 
-    role: "Registrant Relations", 
+    role: "Operations Lead", 
     img: "/team/Dhruv.png",
-    color: "border-[#48c0b2]" // Teal
+    color: "border-[#60a5fa]" // Blue
   },
 ];
 
