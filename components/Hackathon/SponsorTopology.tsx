@@ -98,7 +98,7 @@ const HolographicCard = ({ name, role, color, img, desc, glow, status, sysId }: 
              src={img} 
              alt={name} 
              fill 
-             className="object-contain drop-shadow-sm scale-180" 
+             className="object-contain drop-shadow-sm" 
              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
            />
         </div>

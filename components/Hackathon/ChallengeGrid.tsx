@@ -149,7 +149,7 @@ const ChallengeCard = ({
       {/* SPONSOR BADGE */}
       <div className={`w-14 h-14 md:w-18 md:h-18 shrink-0 rounded-full bg-white border-2 ${borderColor} p-2 shadow-lg flex items-center justify-center overflow-hidden`}>
         <div className="relative w-full h-full">
-           <Image src={logo} alt={title} fill className="object-contain scale-150" />
+           <Image src={logo} alt={title} fill className="object-contain" />
         </div>
       </div>
     </div>
