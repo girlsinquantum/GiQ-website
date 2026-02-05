@@ -44,8 +44,7 @@ export default async function HackathonPage() {
       )}
 
       <div className="bg-[#48c0b2]/10 border-y border-[#48c0b2]/20 text-[#48c0b2] text-center py-3 px-4 font-mono text-xs md:text-sm tracking-wide leading-relaxed">
-          ✨ <strong>Open to all genders!</strong> It's okay if you don't have a student status, we prioritize skills. <br className="md:hidden" />
-          Beginners are welcome in <strong>Social Impact</strong>; Technical tracks require <strong>Proof of Work</strong>.
+          ✨ <strong>Open to participants of all genders!</strong> Also, it's okay if you don't have a student status, we prioritize your skills! <br className="md:hidden" />
         </div>
 
       {/* Intro Text */}
