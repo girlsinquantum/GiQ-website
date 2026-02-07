@@ -179,6 +179,13 @@ export const advisoryBoard = [
   },
 
   {
+    name: "Samuel Horsch",
+    role: "Quantum Applications Architect @ Quandela",
+    desc: "Samuel Horsch works at the interface of quantum computing algorithms and their application to practical, real-world use cases. His work focuses on making quantum computing accessible to a broad audience by developing learning resources, delivering workshops and seminars, and enabling hands-on access to photonic quantum computers. He is particularly interested in bridging the gap between theoretical quantum algorithms and their effective deployment on quantum hardware.",
+    image: "/advisors/samuel.jpg"
+  },
+
+  {
     name: "Shruti Taksali",
     role: "Assistant Professor",
     desc: "Assistant professor with a PhD in nanoelectronics, specializing in quantum hardware. She offers expertise in research and education within nanoelectronics and quantum systems.",
