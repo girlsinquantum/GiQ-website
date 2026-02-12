@@ -48,13 +48,13 @@ const TEAM = [
   { 
     name: "Angela", 
     role: "Advisor", 
-    img: "/team/angela.jpg",
+    img: "/advisors/angela.jpg",
     color: "border-[#6b21a8]" // Deep Purple
   },
   { 
     name: "Samuel", 
     role: "Advisor", 
-    img: "/team/samuel.jpg",
+    img: "/advisors/samuel.jpg",
     color: "border-[#2a8f85]" // Dark Teal
   },
 ];
