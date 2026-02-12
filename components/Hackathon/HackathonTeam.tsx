@@ -22,6 +22,12 @@ const TEAM = [
     color: "border-[#fde047]" // Yellow
   },
   { 
+    name: "Diya", 
+    role: "Design Lead", 
+    img: "/team/Diya.png",
+    color: "border-[#d6b3e8]" // Lavender
+  },
+  { 
     name: "Arife", 
     role: "Design & Program", 
     img: "/team/Arife.png",
@@ -35,9 +41,21 @@ const TEAM = [
   },
   { 
     name: "Dhruv", 
-    role: "Operations Lead", 
+    role: "Operations", 
     img: "/team/Dhruv.png",
     color: "border-[#60a5fa]" // Blue
+  },
+  { 
+    name: "Angela", 
+    role: "Advisor", 
+    img: "/team/angela.jpg",
+    color: "border-[#6b21a8]" // Deep Purple
+  },
+  { 
+    name: "Samuel", 
+    role: "Advisor", 
+    img: "/team/samuel.jpg",
+    color: "border-[#2a8f85]" // Dark Teal
   },
 ];
 
