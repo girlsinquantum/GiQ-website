@@ -17,10 +17,10 @@ export default function CircuitTimeline() {
       active: false 
     },
     { 
-      date: "Pending", 
+      date: "Feb 24 (Tue)", 
       title: "Bootcamp Day 2", 
       desc: "Workshop: Cassandre Notton (Quandela) on 'QML with MerLin'.", 
-      sub: "Afternoon (Europe)",
+      sub: "11 AM ET",
       active: false 
     },
     { 

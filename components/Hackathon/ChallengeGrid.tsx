@@ -106,7 +106,7 @@ export default function ChallengeGrid() {
             trackColor="text-[#f7a6dc]"
             borderColor="border-[#f7a6dc]"
             icon={<Heart className="text-[#f7a6dc]" size={20} />}
-            logo="/logo.svg"
+            logo="/partners/infleqtion.png"
             difficulty="Beginner / Creative"
           >
             <p className="text-gray-300 text-sm leading-relaxed mb-4">
