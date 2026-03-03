@@ -48,22 +48,6 @@ export default function Navbar() {
           </Link>
 
           <div className="hidden md:flex space-x-8 items-center">
-             <Link 
-                href="/hackathon" 
-                className={`relative px-4 py-2 rounded-lg font-bold transition-all duration-300 flex items-center gap-2
-                  ${isHackathon 
-                    ? "bg-[#fde047]/10 text-[#fde047] border border-[#fde047]/50 shadow-[0_0_15px_rgba(253,224,71,0.2)]" 
-                    : "text-giq-purple hover:text-giq-deep hover:bg-purple-50"
-                }`}
-             >
-                {isHackathon ? <Terminal size={16} /> : <Sparkles size={16} />}
-                Q-volution 2026
-                {/* Status Dot */}
-                <span className="absolute top-0 right-0 -mt-1 -mr-1 flex h-3 w-3">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
-                </span>
-             </Link>
 
              <Link href="/events" className={`${textClasses} transition font-medium text-sm lg:text-base`}>Events</Link>
              <Link href="/blogs" className={`${textClasses} transition font-medium text-sm lg:text-base`}>Blogs</Link>
