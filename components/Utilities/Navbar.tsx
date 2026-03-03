@@ -91,14 +91,6 @@ export default function Navbar() {
       
        {isOpen && (
         <div className={`md:hidden flex flex-col p-4 space-y-4 shadow-xl border-b ${isHackathon ? "bg-[#1e293b] border-gray-800" : "bg-white border-gray-100"}`}>
-           <Link 
-              href="/hackathon" 
-              onClick={() => setIsOpen(false)} 
-              className="text-[#fde047] font-bold text-lg py-2 flex items-center gap-2 border-b border-gray-700/50"
-            >
-              <Terminal size={20} />
-              Q-volution Hackathon
-           </Link>
           <Link href="/events" onClick={() => setIsOpen(false)} className={`${textClasses} text-lg py-2`}>Events</Link>
           <Link href="/blogs" onClick={() => setIsOpen(false)} className={`${textClasses} text-lg py-2`}>Blogs</Link>
  { /*      <Link href="/opportunities" onClick={() => setIsOpen(false)} className={`${textClasses} text-lg py-2`}>Opportunities</Link> */ }
