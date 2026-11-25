@@ -96,7 +96,8 @@ export const advisoryBoard = [
   {
     name: "Anders Indset",
     role: "Founder & Chairman, tomorrowmensch AG",
-    desc: "Frontier-tech investor, philosopher and author of eight books. Anders is founder and chairman of tomorrowmensch AG and hosts The Quantum Economy, including its podcast and the annual Quantum Economy Reception in Davos, connecting investors, builders and learners across the quantum ecosystem."
+    desc: "Frontier-tech investor, philosopher and author of eight books. Anders is founder and chairman of tomorrowmensch AG and hosts The Quantum Economy, including its podcast and the annual Quantum Economy Reception in Davos, connecting investors, builders and learners across the quantum ecosystem.",
+    image: "/advisors/anders.jpg"
   },
   {
     name: "Prof. Dr. Gerhard Hellstern",
