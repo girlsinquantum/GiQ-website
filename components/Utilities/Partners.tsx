@@ -25,6 +25,7 @@ export default function Partners() {
     "/partners/swisscyber.png",
     "/partners/hop.jpg",
     "/partners/inspiringgirls.png",
+    "/partners/quantumx.png",
 
     
 
