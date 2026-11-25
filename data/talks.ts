@@ -14,18 +14,22 @@ export interface Talk {
   speakers: string[];
   description: string;
   link?: string;
+  linkLabel?: string;
 }
 
 export const talks: Talk[] = [
   {
-    title: "QuantumX Summit",
-    event: "Qiskit Fall Fest 2026 × QuantumX",
+    title: "Quantum Before Math, and How It Will Change the Economy",
+    event: "QuantumX Summit · Qiskit Fall Fest 2026",
     kind: "Summit",
     dateLabel: "28 Nov 2026",
     date: "2026-11-28",
+    location: "Online",
     speakers: ["Dhruv Sachdeva"],
     description:
-      "Closing out Qiskit Fall Fest 2026, Dhruv joins the QuantumX Summit speaker lineup to talk about quantum education and making dense technical ideas simple.",
+      "Closing out Qiskit Fall Fest 2026, Dhruv makes the case for learning quantum through physical intuition before the math, and explores how quantum computing will reshape the economy.",
+    link: "https://luma.com/rzpptnuq",
+    linkLabel: "Register",
   },
   {
     title: "Inside Willow + Beyond the Quantum Computer",
@@ -41,12 +45,14 @@ export const talks: Talk[] = [
     title: "Foundations of Quantum Computing × Girls in Quantum",
     event: "Qiskit Fall Fest 2026 · QuantumX Foundation",
     kind: "Talk",
-    dateLabel: "Fall 2026",
+    dateLabel: "17 Oct 2026",
+    date: "2026-10-17",
     location: "Online",
     speakers: ["Girls in Quantum speakers"],
     description:
-      "A beginner-friendly expert talk on qubits, superposition, entanglement, gates and circuits, real-world applications and quantum careers, with nearly 300 attendees.",
-    link: "https://luma.com/8jpgnkcg",
+      "A beginner-friendly expert talk on qubits, superposition, entanglement, gates and circuits, real-world applications and quantum careers, with nearly 300 registrations.",
+    link: "https://www.youtube.com/live/hwWfou1kUN4",
+    linkLabel: "Watch the recording",
   },
   {
     title: "Women in Quantum: Who Gets to Shape the Future?",

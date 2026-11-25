@@ -44,7 +44,7 @@ function TalkCard({ talk, upcoming }: { talk: Talk; upcoming: boolean }) {
           rel="noopener noreferrer"
           className="mt-5 inline-flex items-center gap-1 self-start font-bold text-giq-dark hover:text-giq-deep"
         >
-          Learn more <ArrowUpRight size={16} />
+          {talk.linkLabel ?? "Learn more"} <ArrowUpRight size={16} />
         </a>
       )}
     </article>
@@ -58,7 +58,7 @@ export default function TalksHighlights() {
   return (
     <section className="mb-24">
       <div className="mb-10 text-center">
-        <span className="text-sm font-bold uppercase tracking-widest text-giq-purple">On stage</span>
+        <span className="text-sm font-bold uppercase tracking-widest text-giq-deep">On stage</span>
         <h2 className="mt-2 text-4xl md:text-5xl font-bold text-giq-text">Talks &amp; Highlights</h2>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
           Where our team has been speaking, chairing panels and representing Girls in Quantum around the world.

@@ -18,7 +18,7 @@ export default function ResourceSpotlight() {
       <div className="relative flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
         <div className="max-w-2xl">
           <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-xs font-bold uppercase tracking-widest">
-            <Sparkles size={14} /> Featured · Built by our team
+            <Sparkles size={14} /> Featured · Built by Dhruv Sachdeva
           </span>
           <h2 className="mt-4 text-3xl md:text-4xl font-bold">Quantum Intuition</h2>
           <p className="mt-3 text-lg text-white/85 leading-relaxed">
