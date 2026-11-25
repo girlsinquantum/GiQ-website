@@ -70,7 +70,7 @@ export default function SocialHub() {
             </motion.a>
 
             <motion.a 
-              href="https://discord.gg/xE9mfGSy" 
+              href="https://discord.gg/YM2dYnWS" 
               target="_blank" rel="noopener noreferrer"
               whileHover={{ y: -5, backgroundColor: "#5865F2" }}
               whileTap={{ scale: 0.95, backgroundColor: "#5865F2" }}
