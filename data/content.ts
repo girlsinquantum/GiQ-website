@@ -12,7 +12,7 @@ export const teamMembers = [
     name: "Dhruv Sachdeva",
     role: "Head of Team & Project Management",
     country: "India",
-    image: "/team/Dhruv.png",
+    image: "/team/Dhruv.jpg",
     linkedin: "https://www.linkedin.com/in/dhruv-sachdeva-1515bb308",
     bio: "Leads team coordination and project management at Girls in Quantum. Creator of Quantum Intuition, a free 22-lesson course that teaches quantum computing picture first, math second, code third, built with The Quantum Economy."
   },
