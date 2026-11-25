@@ -18,10 +18,11 @@ export const teamMembers = [
   },
   {
     name: "Alessandra Jabłonowska",
+    linkedin: "https://www.linkedin.com/in/alessandra-jablonowska",
     role: "Head of Impact",
     country: "Poland",
     image: "/team/Alessandra.jpg",
-    bio: "Based in Warsaw, Alessandra drives quantum education and outreach, linking research, policy and public engagement. She has worked with Poland's Ministry of Education to bring quantum topics into technical high schools and founded the interview series Ask a Quantum Scientist."
+    bio: "Alessandra has collaborated with CERN, the European Parliament and Poland's Ministry of Education, contributed to the Quantum Europe Strategy, and developed international quantum education and mentoring initiatives. She is reading Physical Natural Sciences at Cambridge."
   },
   {
     name: "Sophia Guertler",
@@ -68,31 +69,54 @@ export const advisoryBoard = [
   {
     name: "Prof. Jingbo Wang",
     role: "Professor of Physics @ University of Western Australia",
-    desc: "Founder and director of UWA's Research Centre for Quantum Information, Simulation and Algorithms (QUISA) and director of the UWA-Pawsey Educational Quantum Computing Centre. She was Head of Physics at UWA from 2017 to 2023, and her research covers quantum walks, quantum simulation and quantum algorithms.",
+    desc: "Australian quantum physicist working in quantum simulation, quantum algorithms and quantum information science. She founded and directs UWA's Research Centre for Quantum Information, Simulation and Algorithms (QUISA), directs the UWA-Pawsey Educational Quantum Computing Centre, and was Head of Physics at UWA from 2017 to 2023.",
     image: "/advisors/jingbo.jpg"
   },
   {
     name: "Lirandë Pira",
-    role: "Alice Postdoctoral Fellow @ Centre for Quantum Technologies",
-    desc: "Research fellow at the Centre for Quantum Technologies in Singapore, in Patrick Rebentrost's group, and recipient of an inaugural Alice Postdoctoral Fellowship. Lirandë's research explores how quantum machines will learn, spanning quantum machine learning, learning theory and quantum algorithms, following a PhD at the University of Technology Sydney."
+    role: "Alice Postdoctoral Fellow @ CQT, National University of Singapore",
+    desc: "Researcher in quantum computing and machine learning at the Centre for Quantum Technologies, National University of Singapore, and recipient of an inaugural Alice Postdoctoral Fellowship. Lirandë's research explores how quantum machines will learn, spanning quantum machine learning, learning theory and quantum algorithms."
   },
   {
     name: "Simon Richard Goorney",
     role: "Postdoctoral Researcher @ Aarhus University",
-    desc: "Head of Operations and Research for the DigiQ master's programme and the European Quantum Skills Academy at Aarhus University. Simon studies how quantum technology is adopted by society, including national quantum strategies, workforce development and mapping the global quantum community.",
+    desc: "Postdoctoral researcher in the Department of Management at Aarhus University, specialising in quantum technology workforce development, education and industry governance. He is Head of Operations and Research for the DigiQ master's programme and the European Quantum Skills Academy.",
     image: "/advisors/simon.jpg"
   },
   {
     name: "Ella Meyer",
     role: "Quantum Computing Outreach Coordinator @ UBC Geering Up",
-    desc: "Quantum Computing Outreach Coordinator at UBC Geering Up Engineering Outreach in Canada, where she works to make quantum education inclusive and accessible and to expand quantum computing opportunities for students in British Columbia.",
+    desc: "Quantum Computing Outreach Coordinator for UBC Geering Up Engineering Outreach at the University of British Columbia. An advocate for quantum education that is inclusive, engaging and accessible, she develops programs that bring quantum learning to students, teachers and underrepresented communities.",
     image: "/advisors/ella.jpg"
   },
   {
     name: "Sabina Drăgoi",
-    role: "PhD Researcher @ ETH Zurich & IBM",
-    desc: "PhD researcher in quantum information theory and quantum computing at ETH Zurich and IBM, with quantum coursework from MIT and project work with Harvard's Lukin Group on scalable implementations of quantum algorithms.",
+    image: "/advisors/sabina.jpg",
+    role: "Doctoral Student @ ETH Zürich & IBM Quantum",
+    desc: "Doctoral student in quantum information theory and quantum computing at ETH Zürich and IBM Quantum. She delivered the final lecture of the Qiskit Global Summer School 2026.",
     linkedin: "https://www.linkedin.com/in/sabina-dragoi"
+  },
+  {
+    name: "Dr. Kenneth M. Merz Jr.",
+    role: "Computational Life Sciences @ Cleveland Clinic",
+    desc: "Computational chemist at Cleveland Clinic's Lerner Research Institute, where his lab develops theoretical and computational tools and applies them to biological problems. He is editor-in-chief of the ACS Journal of Chemical Information and Modeling and a Fellow of the ACS and AAAS.",
+    image: "/advisors/merz.jpg"
+  },
+  {
+    name: "Fabio Cumbo",
+    role: "Research Associate @ Cleveland Clinic",
+    desc: "Computer scientist and bioinformatics researcher working as a Research Associate in the Blankenberg Lab within the Center for Computational Life Sciences at Cleveland Clinic.",
+    image: "/advisors/fabio.jpg"
+  },
+  {
+    name: "Haimeng Zhang",
+    role: "Quantum Researcher & Developer @ IBM Quantum",
+    desc: "Quantum researcher and developer at IBM Quantum, based in New York. She delivered a lecture at the Qiskit Global Summer School 2026."
+  },
+  {
+    name: "Sanskriti Deva",
+    role: "Quantum Engineer & STEM Educator",
+    desc: "Indian-American quantum engineer and STEM educator who has taught quantum computing to thousands of students, as featured by The Quantum Insider."
   },
   {
     name: "Prof. Dr. Gerhard Hellstern",
@@ -141,8 +165,8 @@ export const advisoryBoard = [
   },
   {
     name: "Arthi Udayakumar",
-    role: "Quantum Specialist @ Accenture Labs",
-    desc: "AI/ML and Quantum Computational Science Specialist at Accenture Labs. She works on identifying use cases for quantum computing, collaborating with clients and academia, and conducting educational workshops.",
+    role: "Quantum Computing Research Scientist @ HSBC, Singapore",
+    desc: "Quantum Computing Research Scientist at HSBC in Singapore. She previously worked as an AI/ML and Quantum Computational Science Specialist at Accenture Labs, identifying quantum use cases, collaborating with clients and academia, and running educational workshops.",
     image: "/advisors/arthi.jpg"
   },
   {
