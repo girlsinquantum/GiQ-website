@@ -66,6 +66,35 @@ export const advisoryBoard = [
     image: "/advisors/anders.jpg"
   },
   {
+    name: "Prof. Jingbo Wang",
+    role: "Professor of Physics @ University of Western Australia",
+    desc: "Founder and director of UWA's Research Centre for Quantum Information, Simulation and Algorithms (QUISA) and director of the UWA-Pawsey Educational Quantum Computing Centre. She was Head of Physics at UWA from 2017 to 2023, and her research covers quantum walks, quantum simulation and quantum algorithms.",
+    image: "/advisors/jingbo.jpg"
+  },
+  {
+    name: "Lirandë Pira",
+    role: "Alice Postdoctoral Fellow @ Centre for Quantum Technologies",
+    desc: "Research fellow at the Centre for Quantum Technologies in Singapore, in Patrick Rebentrost's group, and recipient of an inaugural Alice Postdoctoral Fellowship. Lirandë's research explores how quantum machines will learn, spanning quantum machine learning, learning theory and quantum algorithms, following a PhD at the University of Technology Sydney."
+  },
+  {
+    name: "Simon Richard Goorney",
+    role: "Postdoctoral Researcher @ Aarhus University",
+    desc: "Head of Operations and Research for the DigiQ master's programme and the European Quantum Skills Academy at Aarhus University. Simon studies how quantum technology is adopted by society, including national quantum strategies, workforce development and mapping the global quantum community.",
+    image: "/advisors/simon.jpg"
+  },
+  {
+    name: "Ella Meyer",
+    role: "Quantum Computing Outreach Coordinator @ UBC Geering Up",
+    desc: "Quantum Computing Outreach Coordinator at UBC Geering Up Engineering Outreach in Canada, where she works to make quantum education inclusive and accessible and to expand quantum computing opportunities for students in British Columbia.",
+    image: "/advisors/ella.jpg"
+  },
+  {
+    name: "Sabina Drăgoi",
+    role: "PhD Researcher @ ETH Zurich & IBM",
+    desc: "PhD researcher in quantum information theory and quantum computing at ETH Zurich and IBM, with quantum coursework from MIT and project work with Harvard's Lukin Group on scalable implementations of quantum algorithms.",
+    linkedin: "https://www.linkedin.com/in/sabina-dragoi"
+  },
+  {
     name: "Prof. Dr. Gerhard Hellstern",
     role: "Professor & Theoretical Physicist",
     desc: "Professor with a background in theoretical physics and nearly 20 years of experience in the finance industry. His work focuses on applying technologies such as quantum computing to business models. He bridges academia, industry, and public authorities and has mentored Girls in Quantum research projects.",

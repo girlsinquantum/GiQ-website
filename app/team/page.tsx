@@ -1,5 +1,6 @@
 import Navbar from '@/components/Utilities/Navbar';
 import TeamCard from '@/components/Utilities/TeamCard';
+import AdvisoryBoard from '@/components/Team/AdvisoryBoard';
 import { teamMembers, ambassadors, advisoryBoard } from '@/data/content';
 
 export default function TeamPage() {
@@ -42,11 +43,7 @@ export default function TeamPage() {
           <h2 className="text-3xl font-bold text-gray-800 mb-10 pl-4 border-l-4 border-giq-purple">
             Advisory Board
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {advisoryBoard.map((advisor, i) => (
-              <TeamCard key={i} data={advisor} isAdvisor={true} index={i + 10} />
-            ))}
-          </div>
+          <AdvisoryBoard advisors={advisoryBoard} />
         </div>
 
                 <div className="mb-20">
