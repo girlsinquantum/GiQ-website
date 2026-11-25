@@ -17,10 +17,11 @@ export const teamMembers = [
     bio: "Leads team coordination and project management at Girls in Quantum. Creator of Quantum Intuition, a free 22-lesson course that teaches quantum computing picture first, math second, code third, built with The Quantum Economy."
   },
   {
-    name: "Alessandra",
+    name: "Alessandra Jabłonowska",
     role: "Head of Impact",
     country: "Poland",
-    bio: "Leads impact at Girls in Quantum, measuring and growing the reach of our programs across our global community."
+    image: "/team/Alessandra.jpg",
+    bio: "Based in Warsaw, Alessandra drives quantum education and outreach, linking research, policy and public engagement. She has worked with Poland's Ministry of Education to bring quantum topics into technical high schools and founded the interview series Ask a Quantum Scientist."
   },
   {
     name: "Sophia Guertler",
@@ -28,7 +29,7 @@ export const teamMembers = [
     country: "Germany",
     image: "/team/Sophia.jpg",
     linkedin: "https://www.linkedin.com/in/sophia-guertler-120b94232/",
-    bio: "Works at the intersection of integrated photonics and quantum technologies, supporting research and operations within neuromorphic quantum photonics."
+    bio: "Sophia leads projects and collaborations with industry and academia. She is a voice for risk-taking and innovation. Based in Munich, she specialises in photonics, semiconductor physics and nanotechnology."
   },
   {
     name: "Diya Nair",
