@@ -47,48 +47,12 @@ export const ambassadors = [
     image: "/team/Yuka.png"
   },
   { 
-    name: "Rania Habib", 
-    country: "Pakistan", 
-    role: "Pakistan Ambassador",
-    image: "/team/Rania.png",
-    bio: "Actively engaged in quantum computing education and outreach, with a strong interest in making quantum concepts accessible to wider audiences."
-  },
-  { 
-    name: "Fatima Siddiqui", 
-    country: "Pakistan", 
-    role: "Pakistan Ambassador",
-    image: "/team/Fatima.png",
-    linkedin: "https://www.linkedin.com/in/fatima-siddiqui-b97485309",
-    bio: "Interested in nanotechnology and science outreach, combining technical curiosity with creative and community-driven initiatives."
-  },
-  { 
-    name: "Francesca Martínez", 
-    country: "Colombia", 
-    role: "Colombia Ambassador",
-    image: "/team/fran.jpg",
-    linkedin: "https://www.linkedin.com/in/frandorturtles/",
-    bio: "Works at the intersection of technology, education, and community building, with a strong interest in local and global impact."
-  },
-  { 
     name: "Maria Helena Siqueira", 
     country: "Brazil", 
     role: "Brazilian Ambassador",
     image: "/team/Maria.png",
     linkedin: "https://linkedin.com/in/mariahelenasiqueira",
     bio: "Works in data science and machine learning, with experience building and leading applied AI solutions."
-  },
-  { 
-    name: "Tanvi Gopalan", 
-    country: "USA", 
-    role: "NY & NJ Ambassador",
-    image: "/team/Tanvi.png",
-    bio: "Hosts educational programs on quantum physics and speaks on youth engagement and early exposure to advanced science topics."
-  },
-  { 
-    name: "Andreea Istrate", 
-    country: "Romania", 
-    role: "Romania Ambassador",
-    image: "/team/Andreea.png"
   }
 ];
 
