@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Navbar from "@/components/Utilities/Navbar";
 import ResourceCard from "@/components/Resources/ResourceCard";
+import ResourceSpotlight from "@/components/Resources/ResourceSpotlight";
 import { PlusCircle } from "lucide-react";
 import { Resource } from "@/data/resources";
 
@@ -41,6 +42,8 @@ export default function ResourcesClient({ initialResources }: ResourcesClientPro
             <PlusCircle size={20} /> Submit a Resource
           </a>
         </div>
+
+        <ResourceSpotlight />
 
         <div className="py-4 mb-8 -mx-4 px-4 border-b border-gray-200/50">
           <div className="flex overflow-x-auto pb-2 gap-2 no-scrollbar">

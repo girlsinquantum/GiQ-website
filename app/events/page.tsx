@@ -1,5 +1,6 @@
 import { getEvents } from "@/lib/events";
 import QuantumTimeline from "@/components/Events/Timeline";
+import TalksHighlights from "@/components/Events/TalksHighlights";
 
 export const revalidate = 60; 
 
@@ -26,6 +27,8 @@ export default async function EventsPage() {
             Explore upcoming events or relive our past milestones.
           </p>
         </div>
+
+        <TalksHighlights />
 
         <QuantumTimeline events={allEvents} />
 

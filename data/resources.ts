@@ -25,6 +25,7 @@ export const resources: Resource[] = [
   { title: "Build an Atom", category: "Game", link: "https://phet.colorado.edu/en/simulation/build-an-atom" },
 
   // --- COURSES & ACADEMIES ---
+  { title: "Quantum Intuition", category: "Course", link: "https://thequantumeconomy.com/quantumintuition" },
   { title: "Qiskit Textbook", category: "Course", link: "https://qiskit.org/textbook" },
   { title: "Womanium & Wiser Quantum Program", category: "Course", link: "https://www.womanium.org/Quantum/PDE" },
   { title: "ScholarIQ Intro Course", category: "Course", link: "http://scholar-iq.org/" },

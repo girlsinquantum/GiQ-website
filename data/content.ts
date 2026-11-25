@@ -9,6 +9,19 @@ export const teamMembers = [
     bio: "Founder & CEO of Girls in Quantum, leading a global education platform reaching 8,000+ learners across 60+ countries. International speaker recognized by Forbes, Nature, and The White House for advancing diversity in STEM."
   },
   {
+    name: "Dhruv Sachdeva",
+    role: "Head of Team & Project Management",
+    country: "India",
+    image: "/team/Dhruv.png",
+    linkedin: "https://www.linkedin.com/in/dhruv-sachdeva-1515bb308",
+    bio: "Leads team coordination and project management at Girls in Quantum. Creator of Quantum Intuition, a free 22-lesson course that teaches quantum computing picture first, math second, code third, built with The Quantum Economy."
+  },
+  {
+    name: "Alessandra",
+    role: "Head of Impact",
+    bio: "Leads impact at Girls in Quantum, measuring and growing the reach of our programs across our global community."
+  },
+  {
     name: "Sophia Guertler",
     role: "Head of Operations",
     country: "Germany",
@@ -79,14 +92,6 @@ export const teamMembers = [
     image: "/team/Jessica.png",
     linkedin: "https://www.linkedin.com/in/jwonges/",
     bio: "Works across media and communications, shaping narratives around physics, science outreach, and global collaboration."
-  },
-  {
-    name: "Dhruv Sachdeva",
-    role: "Team Management",
-    country: "India",
-    image: "/team/Dhruv.png",
-    linkedin: "https://www.linkedin.com/in/dhruv-sachdeva-1515bb308",
-    bio: "Contributes to team coordination and quantum education initiatives, with a focus on simplifying complex technical ideas."
   }
 ];
 
