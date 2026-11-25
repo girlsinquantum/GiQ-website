@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, Play } from "lucide-react";
-import { SiInstagram, SiYoutube, SiMedium, SiLinkedin, SiDiscord } from "react-icons/si";
+import { SiInstagram, SiYoutube, SiMedium, SiLinkedin, SiDiscord, SiWhatsapp } from "react-icons/si";
 import Image from "next/image";
 import { getSocialFeed, SocialPost } from "@/lib/social";
 
@@ -77,6 +77,17 @@ export default function SocialHub() {
               className="w-14 h-14 bg-giq-main rounded-full flex items-center justify-center text-white shadow-md transition-colors duration-300"
             >
               <SiDiscord size={26} />
+            </motion.a>
+
+            <motion.a
+              href="https://chat.whatsapp.com/J7KNKhzXRUmJywz8woPiLz"
+              target="_blank" rel="noopener noreferrer"
+              aria-label="Join our WhatsApp community"
+              whileHover={{ y: -5, backgroundColor: "#25D366" }}
+              whileTap={{ scale: 0.95, backgroundColor: "#25D366" }}
+              className="w-14 h-14 bg-giq-dark rounded-full flex items-center justify-center text-white shadow-md transition-colors duration-300"
+            >
+              <SiWhatsapp size={26} />
             </motion.a>
 
             <motion.a 
