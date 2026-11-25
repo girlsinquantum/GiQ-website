@@ -36,62 +36,6 @@ export const teamMembers = [
     image: "/team/Diya.png",
     linkedin: "https://www.linkedin.com/in/diya-s-nair/",
     bio: "Leads outreach initiatives at Girls in Quantum and co-authored *Quantum Computing through Geopolitics*, connecting quantum science with global policy conversations."
-  },
-  {
-    name: "Nafisa Shamim Rafa",
-    role: "Project Manager",
-    country: "Bangladesh",
-    image: "/team/Nafisa.jpg",
-    linkedin: "https://bd.linkedin.com/in/nafisa-shamim-rafa-6534131aa",
-    bio: "Researcher and software developer with experience across open-source quantum programs, global research initiatives, and developer advocacy."
-  },
-  {
-    name: "Harshitha Poludas",
-    role: "Advisory Board Manager",
-    country: "USA",
-    image: "/team/Harshitha.png",
-    linkedin: "https://www.linkedin.com/in/harshitha-poludas/",
-    bio: "Works in cryptography research, supporting secure systems and contributing to academic and applied research efforts."
-  },
-  {
-    name: "Amruta Rashinkar",
-    role: "Team Management Lead",
-    country: "USA",
-    image: "/team/Amruta.png",
-    linkedin: "https://www.linkedin.com/in/amruta-r-7789ba317",
-    bio: "Focused on building strong, collaborative teams and making complex quantum ideas easier to understand and work with."
-  },
-  {
-    name: "Pavitra Bhargavi Allamaraju",
-    role: "Research & Academic Lead",
-    country: "Canada",
-    image: "/team/Pavitra.png",
-    linkedin: "https://www.linkedin.com/in/pavitra-bhargavi-allamaraju-371779242/",
-    bio: "Researcher working across quantum computing and AI, with an interest in applying emerging technologies to real-world challenges."
-  },
-  {
-    name: "Gvantsa Kapanadze",
-    role: "Programs & Projects",
-    country: "Georgia",
-    image: "/team/Gvantsa.png",
-    linkedin: "https://www.linkedin.com/in/gvantsakapanadze/",
-    bio: "Works on program development and project coordination, with a focus on infocommunications and applied quantum technologies."
-  },
-  {
-    name: "Katie Handford",
-    role: "Academic Content Manager",
-    country: "UK",
-    image: "/team/Katie.png",
-    linkedin: "http://linkedin.com/in/katie-handford-4ab4881a0",
-    bio: "Develops academic content in quantum communications and cryptography, translating technical topics into clear learning materials."
-  },
-  {
-    name: "Jessica Wonges",
-    role: "Media & Communications",
-    country: "Germany",
-    image: "/team/Jessica.png",
-    linkedin: "https://www.linkedin.com/in/jwonges/",
-    bio: "Works across media and communications, shaping narratives around physics, science outreach, and global collaboration."
   }
 ];
 
@@ -101,14 +45,6 @@ export const ambassadors = [
     country: "Japan", 
     role: "Japan Ambassador",
     image: "/team/Yuka.png"
-  },
-  { 
-    name: "Nidhi S Chickerur", 
-    country: "India", 
-    role: "Indian Ambassador",
-    image: "/team/Nidhi.png",
-    linkedin: "https://www.linkedin.com/in/nidhi-chickerur",
-    bio: "Interested in research-driven technology and its applications to real-world problems, with a strong focus on impact and learning."
   },
   { 
     name: "Rania Habib", 
@@ -153,10 +89,15 @@ export const ambassadors = [
     country: "Romania", 
     role: "Romania Ambassador",
     image: "/team/Andreea.png"
-  },
+  }
 ];
 
 export const advisoryBoard = [
+  {
+    name: "Anders Indset",
+    role: "Founder & Chairman, tomorrowmensch AG",
+    desc: "Frontier-tech investor, philosopher and author of eight books. Anders is founder and chairman of tomorrowmensch AG and hosts The Quantum Economy, including its podcast and the annual Quantum Economy Reception in Davos, connecting investors, builders and learners across the quantum ecosystem."
+  },
   {
     name: "Prof. Dr. Gerhard Hellstern",
     role: "Professor & Theoretical Physicist",
@@ -388,5 +329,5 @@ export const mapPins = [
   { label: "Uzbekistan", code: "uz", top: "27%", left: "64%" },
   { label: "Venezuela", code: "ve", top: "52%", left: "28%" },
   { label: "Zambia", code: "zm", top: "65%", left: "55%" },
-  { label: "Zimbabwe", code: "zw", top: "68%", left: "56.5%" },
+  { label: "Zimbabwe", code: "zw", top: "68%", left: "56.5%" }
 ];
