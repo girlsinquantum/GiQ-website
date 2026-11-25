@@ -19,6 +19,7 @@ export const teamMembers = [
   {
     name: "Alessandra",
     role: "Head of Impact",
+    country: "Poland",
     bio: "Leads impact at Girls in Quantum, measuring and growing the reach of our programs across our global community."
   },
   {
