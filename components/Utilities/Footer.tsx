@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import NewsletterForm from "@/components/Utilities/NewsletterForm";
 import { motion} from "framer-motion";
 import { 
   ArrowUp, 
@@ -138,20 +139,7 @@ export default function Footer() {
               <p className="text-[var(--color-giq-dark)] mb-6">
                 Receive quantum updates, scholarship alerts, and event invites directly to your inbox.
               </p>
-              <form onSubmit={(e) => e.preventDefault()} className="flex flex-col sm:flex-row gap-3">
-                <input 
-                  type="email" 
-                  placeholder="schrodinger@gmail.com" 
-                  className="flex-1 px-5 py-3 rounded-xl bg-[var(--color-giq-light)]/30 border border-[var(--color-giq-main)]/20 text-[var(--color-giq-deep)] placeholder-[var(--color-giq-dark)]/50 focus:outline-none focus:ring-2 focus:ring-[var(--color-giq-main)] transition-all"
-                />
-                <motion.button 
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="px-8 py-3 rounded-xl bg-[var(--color-giq-deep)] text-white font-bold hover:bg-[var(--color-giq-purple)] transition-colors shadow-md whitespace-nowrap"
-                >
-                  Subscribe
-                </motion.button>
-              </form>
+              <NewsletterForm />
             </div>
           </div>
         </div>

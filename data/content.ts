@@ -6,7 +6,7 @@ export const teamMembers = [
     country: "Chile",
     image: "/team/Elisa.png",
     linkedin: "https://www.linkedin.com/in/elisa-torres-durney",
-    bio: "Founder & CEO of Girls in Quantum, leading a global education platform reaching 8,000+ learners across 60+ countries. International speaker recognized by Forbes, Nature, and The White House for advancing diversity in STEM."
+    bio: "Founder & CEO of Girls in Quantum, leading a global education platform reaching 8,500+ learners across 60+ countries. International speaker recognized by Forbes, Nature, and The White House for advancing diversity in STEM."
   },
   {
     name: "Dhruv Sachdeva",
@@ -178,8 +178,7 @@ export const advisoryBoard = [
   {
     name: "Lourdes Rios",
     role: "ML Engineer",
-    desc: "Machine Learning Engineer with experience in deploying production-grade AI systems. She provides perspectives on the intersection of quantum computing and AI and contributes to cross-functional, multilingual collaboration.",
-    image: "/advisors/lourdes.png"
+    desc: "Machine Learning Engineer with experience in deploying production-grade AI systems. She provides perspectives on the intersection of quantum computing and AI and contributes to cross-functional, multilingual collaboration."
   },
   {
     name: "Jessica Marta Manhica",
@@ -220,8 +219,7 @@ export const advisoryBoard = [
   {
     name: "Jaweria Batool",
     role: "Product Team Lead",
-    desc: "Product Team Lead with experience in launching AI tools and managing product development. She contributes expertise in product strategy at the intersection of AI and quantum technologies.",
-    image: "/advisors/jaweria.png"
+    desc: "Product Team Lead with experience in launching AI tools and managing product development. She contributes expertise in product strategy at the intersection of AI and quantum technologies."
   }
 ];
 

@@ -127,7 +127,7 @@ export async function getSocialFeed(): Promise<SocialPost[]> {
           type: 'instagram',
           title: latestIG.caption ? latestIG.caption.substring(0, 100) + "..." : "View on Instagram",
           thumbnail: validImage, 
-          link: latestIG.permalink,
+          link: latestIG.permalink || "https://www.instagram.com/girlsinquantum/",
         });
       }
     } catch (e) { console.error("IG Fetch fail", e); }
@@ -180,9 +180,9 @@ export async function getSocialFeed(): Promise<SocialPost[]> {
         });
       } else {
         const fallbacks = [
-          { title: "Connect with us on LinkedIn", img: "/team/group-photo.jpg" },
-          { title: "Big things are happening at GiQ!", img: "/media/partners/partners_group.png" },
-          { title: "Empowering future leaders.", img: "/team/group-photo.jpg" }
+          { title: "Connect with us on LinkedIn", img: "/media/group.png" },
+          { title: "Big things are happening at GiQ!", img: "/media/group.png" },
+          { title: "Empowering future leaders.", img: "/media/group.png" }
         ];
         const selected = fallbacks[new Date().getDate() % fallbacks.length];
 

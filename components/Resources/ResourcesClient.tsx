@@ -13,7 +13,7 @@ interface ResourcesClientProps {
 
 export default function ResourcesClient({ initialResources }: ResourcesClientProps) {
   const [filter, setFilter] = useState("All");
-  const categories = ["All", "Course", "Game", "Video", "Book", "Tool", "Article"];
+  const categories = ["All", "Course", "Game", "Video", "Book", "Tool", "Article", "Community"];
 
   const filtered = filter === "All" 
     ? initialResources 

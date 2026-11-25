@@ -1,5 +1,6 @@
 import { teamMembers, ambassadors, advisoryBoard } from "@/data/content";
 import { resources } from "@/data/resources";
+import { talks } from "@/data/talks";
 import { client } from "@/sanity/lib/client";
 
 // Type Definitions
@@ -31,40 +32,20 @@ interface SanityBlog {
 
 const clean = (str: string) => str.toLowerCase().replace(/[^\w\s]/g, "");
 
-const HACKATHON_CONTEXT = `
-EVENT: Q-volution Hackathon 2026
-DATES: February 23 - March 1, 2026.
-REGISTRATION DEADLINE: February 20, 2026.
-LOCATION: Online (Global).
-STATUS: Applications Open. Competitive Selection.
-
-TRACKS & CHALLENGES:
-1. Rigetti Computing (Hardware Track):
-   - Challenge: Energy Grid Optimization (MPES metric).
-   - Tech: QAOA, Weighted Max-Cut.
-   - Constraint: 84-qubit Ankaa-3 QPU access limited to Top 10 teams. Others use simulators.
-   - Difficulty: Advanced.
-
-2. Quandela (Photonic/Finance Track):
-   - Challenge: Option Pricing using Quantum Machine Learning (QML).
-   - Tech: MerLin SDK, Reservoir Computing.
-   - Task: Predict put/call options.
-   - Difficulty: Intermediate/Advanced (ML background preferred).
-
-3. Classiq (Algorithm Track):
-   - Challenge: Harmonic Oscillator Solver.
-   - Tech: Classiq Platform, Circuit Synthesis.
-   - Task: Solve Linear Differential Equations (2020 Tao Xin algorithm).
-   - Difficulty: Intermediate/Advanced.
-
-BOOTCAMP (Feb 23-26):
-- Speakers: Maria Salatino (Rigetti - STEM Journey), Cassandre Notton (Quandela - QML with MerLin).
-- Purpose: Workshops before the 48h Sprint.
-
-APPLICATION REQUIREMENTS:
-- PDF Resume, Proof of Work (150 words), Discord Username.
-- Apply via: Google Form (linked on website).
+const PAST_HACKATHON_CONTEXT = `
+PAST EVENT (completed): Q-volution Hackathon 2026, held online February 23 - March 1, 2026.
+Tracks were run with Rigetti Computing (energy-grid optimization with QAOA), Quandela (option pricing with quantum machine learning)
+and Classiq (harmonic oscillator solver), plus a bootcamp beforehand.
+Applications are CLOSED. Tell users to follow Girls in Quantum on LinkedIn, Instagram, Discord or WhatsApp to hear about the next one.
 `;
+
+function upcomingTalksContext(now: Date): string | null {
+  const upcoming = talks.filter(t => t.date && new Date(`${t.date}T23:59:59Z`) >= now);
+  if (upcoming.length === 0) return null;
+  return upcoming
+    .map(t => `- ${t.title} (${t.event}, ${t.dateLabel}${t.location ? `, ${t.location}` : ""}) with ${t.speakers.join(", ")}${t.link ? `. Register: ${t.link}` : ""}`)
+    .join("\n");
+}
 
 export async function buildChatContext(userMessage: string): Promise<string> {
   const lowerMsg = clean(userMessage);
@@ -77,24 +58,17 @@ export async function buildChatContext(userMessage: string): Promise<string> {
 
   
   const hackathonKeywords = [
-    "hackathon", "q-volution", "qvolution", "competition", "contest", 
-    "rigetti", "quandela", "classiq", "bootcamp", "register", "apply", 
-    "deadline", "track", "challenge", "hardware", "qpu"
+    "hackathon", "q-volution", "qvolution", "competition", "contest",
+    "rigetti", "quandela", "classiq", "bootcamp"
   ];
-
   if (hackathonKeywords.some(k => lowerMsg.includes(k))) {
-    contextParts.push(`CURRENT MAJOR EVENT DETAILS:\n${HACKATHON_CONTEXT}`);
-    
-    // Date Awareness for the bot
-    const today = new Date();
-    const deadline = new Date('2026-02-20');
-    const daysLeft = Math.ceil((deadline.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
-    
-    if (daysLeft > 0) {
-      contextParts.push(`TIME SENSITIVE: There are approx ${daysLeft} days left to register (Deadline Feb 20). Urge them to apply!`);
-    } else {
-      contextParts.push(`TIME SENSITIVE: Registration is likely closed (Deadline was Feb 20). Check with admin.`);
-    }
+    contextParts.push(PAST_HACKATHON_CONTEXT);
+  }
+
+  const eventKeywords = ["register", "apply", "deadline", "event", "talk", "summit", "webinar", "speak"];
+  if (eventKeywords.some(k => lowerMsg.includes(k))) {
+    const talksList = upcomingTalksContext(new Date());
+    if (talksList) contextParts.push(`UPCOMING TALKS BY OUR TEAM:\n${talksList}`);
   }
 
   const allPeople: Person[] = [...teamMembers, ...ambassadors, ...advisoryBoard];
@@ -128,7 +102,7 @@ export async function buildChatContext(userMessage: string): Promise<string> {
 
   if (lowerMsg.match(/(learn|study|resource|book|course|video|game|play|tool|python|sdk)/)) {
     if (lowerMsg.includes("sdk") || lowerMsg.includes("tool")) {
-       contextParts.push(`HACKATHON TOOLS: PyQuil (Rigetti), MerLin (Quandela), Classiq Platform.`);
+       contextParts.push(`TOOLS USED IN OUR 2026 HACKATHON: PyQuil (Rigetti), MerLin (Quandela), Classiq Platform.`);
     }
 
     let relevantResources = resources;

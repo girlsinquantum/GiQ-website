@@ -107,7 +107,7 @@ export default function SocialHub() {
         <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-6 min-h-[600px]">
           
           <motion.a 
-            href={ig?.link} target="_blank" rel="noopener noreferrer"
+            href={ig?.link || "https://www.instagram.com/girlsinquantum/"} target="_blank" rel="noopener noreferrer"
             whileHover={{ scale: 0.99 }}
             whileTap={{ scale: 0.98 }}
             className="h-96 md:h-auto md:col-span-2 md:row-span-2 relative rounded-[3rem] overflow-hidden group bg-gray-200 shadow-xl"
@@ -115,7 +115,7 @@ export default function SocialHub() {
             <AnimatePresence mode="wait">
               {loading ? <motion.div key="skel" exit={{ opacity: 0 }} className="absolute inset-0 bg-gray-300 animate-pulse" /> : (
                 <motion.div key="ig" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="h-full w-full">
-                  <Image src={ig?.thumbnail || "/team/group-photo.jpg"} alt="IG" fill priority className="object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <Image src={ig?.thumbnail || "/media/group.png"} alt="IG" fill priority className="object-cover transition-transform duration-700 group-hover:scale-110" />
                 </motion.div>
               )}
             </AnimatePresence>
@@ -128,7 +128,7 @@ export default function SocialHub() {
           </motion.a>
 
           <motion.a 
-            href={yt?.link} target="_blank" rel="noopener noreferrer"
+            href={yt?.link || "https://www.youtube.com/@girlsinquantum"} target="_blank" rel="noopener noreferrer"
             whileHover={{ scale: 0.98 }}
             whileTap={{ scale: 0.98 }}
             className="h-80 md:h-auto md:col-span-2 bg-black rounded-[3rem] relative overflow-hidden flex items-center justify-center group shadow-lg"
@@ -149,7 +149,7 @@ export default function SocialHub() {
           </motion.a>
 
           <motion.a 
-             href={med?.link} target="_blank" rel="noopener noreferrer"
+             href={med?.link || "https://medium.com/@girlsinquantum"} target="_blank" rel="noopener noreferrer"
              whileHover={{ y: -5 }}
              className="md:col-span-1 bg-white rounded-[3rem] border border-gray-100 flex flex-col overflow-hidden group shadow-sm hover:shadow-2xl transition-all"
           >
@@ -163,7 +163,7 @@ export default function SocialHub() {
           </motion.a>
 
           <motion.a 
-             href={li?.link} target="_blank" rel="noopener noreferrer"
+             href={li?.link || "https://www.linkedin.com/company/girls-in-quantum/"} target="_blank" rel="noopener noreferrer"
              whileHover={{ y: -5 }}
              className="md:col-span-1 bg-[#0A66C2] rounded-[3rem] flex flex-col justify-between relative overflow-hidden text-white shadow-xl group p-8"
           >
