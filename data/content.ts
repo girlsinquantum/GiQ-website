@@ -115,8 +115,9 @@ export const advisoryBoard = [
   },
   {
     name: "Sanskriti Deva",
-    role: "Quantum Engineer & STEM Educator",
-    desc: "Indian-American quantum engineer and STEM educator who has taught quantum computing to thousands of students, as featured by The Quantum Insider."
+    role: "Quantum Engineer @ IBM Quantum",
+    desc: "Quantum engineer at IBM Quantum and STEM educator. She studied electrical and computer engineering at NC State, interned at IBM Quantum's Yorktown Heights research lab, and co-authored IBM's Relay-BP decoder for qLDPC error-correction codes. She has taught quantum computing to thousands of students, including as a teaching assistant for IBM and The Coding School's introductory course.",
+    image: "/advisors/sanskriti.jpg"
   },
   {
     name: "Prof. Dr. Gerhard Hellstern",
