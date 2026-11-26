@@ -39,6 +39,12 @@ export const teamMembers = [
     image: "/team/Diya.png",
     linkedin: "https://www.linkedin.com/in/diya-s-nair/",
     bio: "Leads outreach initiatives at Girls in Quantum and co-authored *Quantum Computing through Geopolitics*, connecting quantum science with global policy conversations."
+  },
+  {
+    name: "Zachary Pederson",
+    role: "Head of Community Engagement",
+    image: "/team/Zachary.jpg",
+    bio: "Leads community engagement at Girls in Quantum, connecting students, mentors and partners across our global community, including the GiQ High Schooler Community for students exploring quantum computing and advanced STEM research."
   }
 ];
 
