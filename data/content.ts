@@ -120,6 +120,19 @@ export const advisoryBoard = [
     image: "/advisors/sanskriti.jpg"
   },
   {
+    name: "Kiran Kaur Raina",
+    role: "Founder @ NucleQi",
+    desc: "Kiran Kaur Raina (aka Natashia) is a quantum technology educator, researcher, content creator and founder of NucleQi, working at the intersection of quantum technology, AI, cybersecurity and deep-tech education. She has been actively involved in the global quantum ecosystem through research, education, speaking and community initiatives, and has delivered talks and workshops for international audiences. Kiran is also a mentor with the Quantum Pioneers Legacy Initiative, supporting young women entering quantum technology and leadership. Through her educational content and public speaking, she focuses on making emerging technologies accessible to students, professionals and the wider technology community.",
+    image: "/advisors/kiran.jpg"
+  },
+  {
+    name: "Yann Beaujeault-Taudière",
+    role: "Quantum Educator & Consultant",
+    desc: "Yann works on quantum capacity building, helping institutions and individuals grow their quantum capabilities and build their ecosystems. His activities range from higher education and outreach to scientific advisory with investment firms, and to helping industries identify and prioritise quantum use cases and set up quantum roadmaps.",
+    image: "/advisors/yann.jpg",
+    linkedin: "https://www.linkedin.com/in/yann-beaujeault-quantum"
+  },
+  {
     name: "Prof. Dr. Gerhard Hellstern",
     role: "Professor & Theoretical Physicist",
     desc: "Professor with a background in theoretical physics and nearly 20 years of experience in the finance industry. His work focuses on applying technologies such as quantum computing to business models. He bridges academia, industry, and public authorities and has mentored Girls in Quantum research projects.",
@@ -177,28 +190,10 @@ export const advisoryBoard = [
     image: "/advisors/michael.jpg"
   },
   {
-    name: "Madeleine Georgopoulou",
-    role: "Patent Assistant",
-    desc: "Patent assistant with a PhD in Quantum Magnetism and a background in chemical physics. She provides insights into career pathways beyond academia, particularly in patent law, and contributes to education and professional networking initiatives.",
-    image: "/advisors/madeleine.png"
-  },
-  {
     name: "Irene Papaefstathiou",
     role: "Quantum Engineer @ Moody's",
     desc: "Quantum computing engineer at Moody’s with a PhD in theoretical physics from the Max Planck Institute. She has experience in international academic environments and supports representation and community building in STEM.",
     image: "/advisors/irene.jpg"
-  },
-  {
-    name: "Priya Pahwa",
-    role: "MTech Student in Quantum Computing",
-    desc: "MTech student in Quantum Computing with research experience at institutions including the Harish Chandra Research Institute and the Indian Space Research Organization. She brings technical expertise in quantum tools and experimental research.",
-    image: "/advisors/priya.jpg"
-  },
-  {
-    name: "Claudia Perry",
-    role: "Digital Science Associate @ bp",
-    desc: "Digital Science Associate at bp with a background in mathematics and computer science. She works on proof-of-concept projects in quantum computing, sensing, and security and chairs the Responsible Quantum Innovation Working Group at UKQuantum.",
-    image: "/advisors/claudia.jpg"
   },
   {
     name: "Ginevra Fulco",
@@ -225,35 +220,6 @@ export const advisoryBoard = [
     image: "/advisors/muna.png"
   },
   {
-    name: "Rani Aher",
-    role: "Technology Leader @ Mastercard",
-    desc: "Technology leader at Mastercard with over 20 years of experience in data engineering and cloud transformation. She is pursuing a PhD in quantum computing and contributes perspectives on industrial-scale program management and quantum applications.",
-    image: "/advisors/rani.jpg"
-  },
-  {
-    name: "Lourdes Rios",
-    role: "ML Engineer",
-    desc: "Machine Learning Engineer with experience in deploying production-grade AI systems. She provides perspectives on the intersection of quantum computing and AI and contributes to cross-functional, multilingual collaboration."
-  },
-  {
-    name: "Jessica Marta Manhica",
-    role: "Intern at C12 Quantum Electronics",
-    desc: "Intern at C12 Quantum Electronics with a master’s degree in Nanoscale Engineering. She has professional experience in cleanroom environments and nanofabrication and contributes expertise in research, analysis, and process improvement.",
-    image: "/advisors/jessica.jpg"
-  },
-  {
-    name: "Anita Nandi",
-    role: "Policy Director",
-    desc: "Policy Director specializing in quantum technology and financial services. She has led international collaborations in quantum education and serves as a board-level governance expert committed to diversity and inclusion.",
-    image: "/advisors/anita.jpg"
-  },
-  {
-    name: "Heng Sovanmonynuth",
-    role: "Digital Transformation Manager",
-    desc: "Digital Transformation Manager and lecturer with experience in quantum computing and AI. He develops technology-driven learning solutions for students across educational levels and bridges policy with practical implementation.",
-    image: "/advisors/heng.jpg"
-  },
-  {
     name: "Kirsten Bark",
     role: "Stack Leader @ HQS Quantum Simulations",
     desc: "Stack Leader for quantum computing at HQS Quantum Simulations with expertise in developing open-source and proprietary quantum software. She contributes technical and leadership experience from a quantum startup environment.",
@@ -270,11 +236,6 @@ export const advisoryBoard = [
     role: "Research Scientist @ Quantinuum",
     desc: "Senior Research Fellow at the Global Centre for Advanced Studies with expertise in quantum foundations, optics, and education. A strong advocate for science communication, he develops innovative approaches to teaching quantum mechanics and leads public engagement initiatives internationally.",
     image: "/advisors/hamza.jpg"
-  },
-  {
-    name: "Jaweria Batool",
-    role: "Product Team Lead",
-    desc: "Product Team Lead with experience in launching AI tools and managing product development. She contributes expertise in product strategy at the intersection of AI and quantum technologies."
   }
 ];
 
